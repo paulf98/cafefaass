@@ -1,6 +1,7 @@
 import Head from "next/head"
  
 import { ISbStoryParams, StoryblokComponent, getStoryblokApi, useStoryblokState } from "@storyblok/react"
+import Layout from "../components/Layout";
  
 export default function Home({story}: any) {
 
@@ -9,16 +10,12 @@ export default function Home({story}: any) {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Café Faass - Lemberg</title>
+        {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
- 
-      <header>
-        <h1>{story ? story.name : "My Site"}</h1>
-      </header>
- 
-      <StoryblokComponent blok={story.content} />
-
+      <Layout>
+        <StoryblokComponent blok={story.content} />
+      </Layout>
     </div>
   )
 }
