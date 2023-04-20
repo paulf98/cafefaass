@@ -5,12 +5,16 @@ import Feature from '../components/Feature';
 import Grid from '../components/Grid';
 import Teaser from '../components/Teaser';
 import Page from '../components/Page';
+import Text from '../components/Text';
+import Carousel from '../components/Carousel';
 
 const components = {
   feature: Feature,
   grid: Grid,
   teaser: Teaser,
   page: Page,
+  text: Text,
+  carousel: Carousel,
 };
 
 storyblokInit({
