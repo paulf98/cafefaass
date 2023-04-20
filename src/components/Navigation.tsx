@@ -1,146 +1,113 @@
-import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-const Navigation = () => {
-  const [openMenu, setOpenMenu] = useState(false);
- 
-  return (
-    <div className="relative bg-white border-b-2 border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center  py-6 md:justify-start md:space-x-10">
-          <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Link href="/">
-                <span className="sr-only">Café Faass</span>
-                <Image
-                  className="h-20 w-auto sm:h-10 hidden sm:block"
-                  src='/next.svg'
-                  alt="Storyblok"
-                  width={251}
-                  height={53}
-                />
-                <Image
-                  className="h-20 w-auto sm:h-10 sm:hidden"
-                  src='/next.svg'
-                  alt="Storyblok"
-                  width={92}
-                  height={106}  
-                />
-            </Link>
-          </div>
-          <div className="-mr-2 -my-2 md:hidden">
-            <button
-              type="button"
-              onClick={() => setOpenMenu(true)}
-              className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-              aria-expanded="false"
-            >
-              <span className="sr-only">Open menu</span>
-              {/* <!-- Heroicon name: outline/menu --> */}
-              <svg
-                className="h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
-          </div>
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-10">
-            <Link href="/about" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                About
-            </Link>
-            <Link href="/blog" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Blog
-            </Link>
-            <Link href="/services" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Services
-            </Link>
-          </div>
-        </div>
-      </div>
- 
-      {/* <!--
-        Mobile menu, show/hide based on mobile menu state.
-      --> */}
-      {openMenu && (
-        <div className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
-          <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-            <div className="pt-5 pb-6 px-5">
-              <div className="flex items-center justify-between">
-                <div>
-                  <Image
-                    className="h-8 w-auto"
-                    src='/next.svg'
-                    alt="Storyblok"
-                    width={251}
-                    height={53}
-                  />
-                </div>
-                <div className="-mr-2">
-                  <button
-                    type="button"
-                    onClick={() => setOpenMenu(false)}
-                    className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                  >
-                    <span className="sr-only">Close menu</span>
-                    {/* <!-- Heroicon name: outline/x --> */}
-                    <svg
-                      className="h-6 w-6"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M6 18L18 6M6 6l12 12"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div className="mt-6">
-                <nav className="grid gap-y-8">
-                  <Link href="/about" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      {/* <!-- Heroicon name: outline/chart-bar --> */}
-                      <span className="ml-3 text-base font-medium text-gray-900">                        
-                        About
-                      </span>
+import Image from 'next/image';
+import Link from 'next/link';
+import Logo from '../../public/Logo.svg';
+import { MdArrowDropDown } from 'react-icons/md';
 
-                  </Link>
-                  <Link href="/blog" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-
-                      {/* <!-- Heroicon name: outline/cursor-click --> */}
-                      <span className="ml-3 text-base font-medium text-gray-900">
-                        
-                        Blog
-                      </span>
-
-                  </Link>
-                  <Link href="/services" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      <span className="ml-3 text-base font-medium text-gray-900">
-                        Services
-                      </span>
-                  </Link>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-};
- 
-export default Navigation;
+export default function Navigation({ children }: { children: React.ReactNode }) {
+	return (
+		<div className='drawer'>
+			<input
+				id='my-drawer-3'
+				type='checkbox'
+				className='drawer-toggle'
+				aria-label='Toggle button'
+			/>
+			<div className='drawer-content flex flex-col'>
+				<div className='w-full navbar bg-white border-b-2'>
+					<div className='flex-none lg:hidden'>
+						<label htmlFor='my-drawer-3' className='btn btn-square btn-ghost'>
+							<svg
+								xmlns='http://www.w3.org/2000/svg'
+								fill='none'
+								viewBox='0 0 24 24'
+								className='inline-block w-6 h-6 stroke-current'
+							>
+								<path
+									strokeLinecap='round'
+									strokeLinejoin='round'
+									strokeWidth='2'
+									d='M4 6h16M4 12h16M4 18h16'
+								></path>
+							</svg>
+						</label>
+					</div>
+					<Link href={'/'} className='btn btn-ghost normal-case text-xl'>
+						<Image src={Logo} alt='Cafe Faass' width={40} height={40} />{' '}
+						<span className='ml-4'>Startseite</span>
+					</Link>
+					{/* DESKTOP NAVIGATION */}
+					<div className='flex-none hidden lg:block ml-auto w-100 '>
+						<ul className='menu menu-horizontal bg-base-100 rounded-box p-2'>
+							<li>
+								<Link href={'/about'}>Über uns</Link>
+							</li>
+							<li tabIndex={0}>
+								<span>
+									Verein <MdArrowDropDown />
+								</span>
+								<ul className='rounded-box bg-white p-2 z-50'>
+									<li>
+										<Link href={'/verein/chronik'}>Chronik</Link>
+									</li>
+									<li>
+										<Link href={'/verein/vorstand'}>Vorstand</Link>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<Link
+						className='btn btn-primary ml-auto hidden lg:inline-flex'
+						href={'/kontakt'}
+					>
+						Kontakt
+					</Link>
+				</div>
+				{children}
+			</div>
+			<div className='drawer-side'>
+				<label htmlFor='my-drawer-3' className='drawer-overlay'></label>
+				{/* MOBILE NAVIGATION */}
+				<ul className='menu w-52 bg-base-100 rounded-r-lg p-2'>
+					<li>
+						<Link href={'/about'}>Über uns</Link>
+					</li>
+					<li tabIndex={0}>
+						<span>
+							Veranstaltungen <MdArrowDropDown />
+						</span>
+						<ul className='rounded-box bg-base-100 p-2'>
+							<li>
+								<Link href={'/veranstaltungen/laufspass'}>Laufspass</Link>
+							</li>
+							<li>
+								<Link href={'/veranstaltungen/traillauf'}>Traillauf</Link>
+							</li>
+							<li>
+								<Link href={'/veranstaltungen/zeltlager'}>Zeltlager</Link>
+							</li>
+						</ul>
+					</li>
+					<li tabIndex={0}>
+						<span>
+							Verein <MdArrowDropDown />
+						</span>
+						<ul className='rounded-box bg-base-100 p-2'>
+							<li>
+								<Link href={'/verein/chronik'}>Chronik</Link>
+							</li>
+							<li>
+								<Link href={'/verein/vorstand'}>Vorstand</Link>
+							</li>
+						</ul>
+					</li>
+					<li className='mt-auto'>
+						<Link className='btn btn-primary ' href={'/kontakt'}>
+							Kontakt
+						</Link>
+					</li>
+				</ul>
+			</div>
+		</div>
+	);
+}

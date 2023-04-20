@@ -3,8 +3,9 @@ import Footer from "./Footer";
  
 const Layout = ({ children }: {children: React.ReactNode}) => (
   <div>
-    <Navigation/>
+    <Navigation>
       {children}
+    </Navigation>
     <Footer />
   </div>
 );
