@@ -12,8 +12,8 @@ export default function Navigation({ children }: { children: React.ReactNode }) 
 				className='drawer-toggle'
 				aria-label='Toggle button'
 			/>
-			<div className='drawer-content flex flex-col'>
-				<div className='w-full navbar bg-white border-b-2'>
+			<div className='drawer-content'>
+				<div className='w-full fixed navbar bg-white border-b-2'>
 					<div className='flex-none lg:hidden'>
 						<label htmlFor='my-drawer-3' className='btn btn-square btn-ghost'>
 							<svg
@@ -36,7 +36,7 @@ export default function Navigation({ children }: { children: React.ReactNode }) 
 						<span className='ml-4'>Startseite</span>
 					</Link>
 					{/* DESKTOP NAVIGATION */}
-					<div className='flex-none hidden lg:block ml-auto w-100 '>
+					<div className='flex-none hidden lg:block ml-auto w-100'>
 						<ul className='menu menu-horizontal bg-base-100 rounded-box p-2'>
 							<li>
 								<Link href={'/about'}>Über uns</Link>
@@ -63,7 +63,9 @@ export default function Navigation({ children }: { children: React.ReactNode }) 
 						Kontakt
 					</Link>
 				</div>
-				{children}
+				<div className='mt-[82px]'>
+					{children}
+				</div>
 			</div>
 			<div className='drawer-side'>
 				<label htmlFor='my-drawer-3' className='drawer-overlay'></label>
