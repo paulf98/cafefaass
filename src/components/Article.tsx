@@ -16,7 +16,7 @@ const Article = ({ blok }: any) => {
   </div>
 </header>
       <div className="prose mx-auto text-center">
-        <div className="text-center lg:w-2/3 w-full">
+        <div className="text-center w-full">
          
           {blok.subtitle && 
             <h2 className="sm:text-3xl text-2xl mb-4 font-medium text-gray-600">
