@@ -7,10 +7,16 @@ import Teaser from '../components/Teaser';
 import Page from '../components/Page';
 import Text from '../components/Text';
 import Carousel from '../components/Carousel';
+import Article from '../components/Article';
+import ArticleTeaser from '../components/ArticleTeaser';
+import News from '../components/News';
 
 const components = {
+  article: Article,
+  articleTeaser: ArticleTeaser,
   feature: Feature,
   grid: Grid,
+  news: News,
   teaser: Teaser,
   page: Page,
   text: Text,

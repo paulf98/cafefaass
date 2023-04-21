@@ -5,7 +5,9 @@ import Layout from "../components/Layout";
  
 export default function Home({story}: any) {
 
-  story = useStoryblokState(story);
+  story = useStoryblokState(story, {
+      resolveRelations: ['news.articles'],
+  });
 
   return (
     <div>
@@ -28,6 +30,7 @@ export async function getServerSideProps(context: any) {
  
   let sbParams: ISbStoryParams = {
     version: "published", // or 'draft'
+    resolve_relations: ['news.articles'],
   };
  
   if (insideStoryblok) {
