@@ -15,7 +15,6 @@ export default function Page({ story }: any) {
     <div >
       <Head>
         <title>Café Faass - {story ? story.name : ""}</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
         <StoryblokComponent blok={story.content} />
@@ -28,7 +27,7 @@ export async function getStaticProps({ params }: any) {
   let slug = params.slug ? params.slug.join("/") : "home";
  
   let sbParams: ISbStoryParams = {
-    version: "draft", // or 'published'
+    version: "published", // or 'published'
   };
  
   const storyblokApi = getStoryblokApi();
@@ -46,7 +45,7 @@ export async function getStaticProps({ params }: any) {
 export async function getStaticPaths() {
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get("cdn/links/" ,{
-    version: 'draft'
+    version: 'published'
   });
  
   let paths: any[] = [];

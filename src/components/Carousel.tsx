@@ -2,7 +2,6 @@ import { storyblokEditable } from "@storyblok/react";
 import Image from "next/image";
 
 const Carousel = ({ blok }: any) => {
-    console.log(blok);
   return (
     <div className="carousel rounded-box mx-auto prose my-4 carousel-center p-4 space-x-4 bg-pink-100" {...storyblokEditable(blok)}>
     {blok.images.map((image: any, index: number) => {
