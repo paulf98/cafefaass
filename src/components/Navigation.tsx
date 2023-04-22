@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Logo from '../../public/Logo.svg';
 import { MdArrowDropDown } from 'react-icons/md';
+import Sidebar from './Sidebar';
 
 export default function Navigation({ children }: { children: React.ReactNode }) {
 	return (
@@ -13,7 +14,7 @@ export default function Navigation({ children }: { children: React.ReactNode }) 
 				aria-label='Toggle button'
 			/>
 			<div className='drawer-content'>
-				<div className='w-full fixed navbar bg-white border-b-2'>
+				<div className='w-full fixed navbar bg-white border-b-2 z-50'>
 					<div className='flex-none lg:hidden'>
 						<label htmlFor='my-drawer-3' className='btn btn-square btn-ghost'>
 							<svg
@@ -37,7 +38,7 @@ export default function Navigation({ children }: { children: React.ReactNode }) 
 					</Link>
 					{/* DESKTOP NAVIGATION */}
 					<div className='flex-none hidden lg:block ml-auto w-100'>
-						<ul className='menu menu-horizontal bg-base-100 rounded-box p-2'>
+						<ul className='menu menu-horizontal bg-base-100 rounded-box p-2 z-50'>
 							<li>
 								<Link href={'/about'}>Über uns</Link>
 							</li>
@@ -63,7 +64,8 @@ export default function Navigation({ children }: { children: React.ReactNode }) 
 						Kontakt
 					</Link>
 				</div>
-				<div className='mt-[82px]'>
+				<div className='mt-20 lg:flex'>
+					<Sidebar />
 					{children}
 				</div>
 			</div>
