@@ -11,12 +11,12 @@ export default function Page({ story }: any) {
   story = useStoryblokState(story);
  
   return (
-    <div >
+    <>
       <Head>
         <title>Café Faass - {story ? story.name : ""}</title>
       </Head>
       <StoryblokComponent blok={story.content} />
-    </div>
+    </>
   );
 }
  

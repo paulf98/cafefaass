@@ -1,3 +1,5 @@
+import React from "react";
+
 const OPENING_HOURS = [
   {
     day: 'Montag',
@@ -46,22 +48,24 @@ export default function OpeningHours() {
           {OPENING_HOURS.map((openingHour) => {
             if (openingHour.openingHours2) {
               return (
-                <>
+                <React.Fragment key={openingHour.day}>
                   <tr key={openingHour.day}>
                     <td>{openingHour.day}</td>
                     <td>{openingHour.openingHours}</td>
                   </tr>
-                  <tr key={openingHour.day}>
+                  <tr key={openingHour.day + '_2'}>
                     <td></td>
                     <td>{openingHour.openingHours2}</td>
                   </tr>
-                </>
+                </React.Fragment>
               )
             }
-            return <tr key={openingHour.day}>
-              <td>{openingHour.day}</td>
-              <td>{openingHour.openingHours}</td>
-            </tr>
+            return (
+              <tr key={openingHour.day}>
+                <td>{openingHour.day}</td>
+                <td>{openingHour.openingHours}</td>
+              </tr>
+            )
           }
           )}
         </tbody>

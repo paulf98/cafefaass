@@ -11,7 +11,6 @@ import Article from '../components/Article';
 import ArticleTeaser from '../components/ArticleTeaser';
 import News from '../components/News';
 import Config from '../components/Config';
-import Navigation from '../components/Navigation';
 import MenuLink from '../components/MenuLink';
 import Layout from '../components/Layout';
 
@@ -26,7 +25,6 @@ const components = {
   page: Page,
   text: Text,
   carousel: Carousel,
-  navigation: Navigation,
   "menu_link": MenuLink,
 };
 

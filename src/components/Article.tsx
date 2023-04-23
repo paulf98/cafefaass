@@ -1,15 +1,23 @@
 import { renderRichText } from "@storyblok/react";
+import Image from "next/image";
  
 const Article = ({ blok }: any) => {
   return (
-    <section className="text-gray-600 body-font">
+    <section className="text-gray-600 body-font w-full">
       <header
-        className="flex items-center justify-center h-64 mb-12 bg-fixed bg-top bg-no-repeat bg-contain custom-img"
-        style={{
-          backgroundImage: `url(${blok.image.filename})`,
-        }}
+        className="flex items-center justify-center h-72 mb-12 relative"
       >
-        <div className="p-5 text-2xl text-white bg-white bg-opacity-70 rounded-xl">
+        <Image 
+          src={blok.image.filename}
+          alt={blok.image.alt}
+          width={800}
+          height={400}
+          style={
+            { objectFit: 'cover', objectPosition: 'center', width: '100%', height: '100%' }
+
+          }
+        />
+        <div className="p-5 text-2xl text-white bg-white bg-opacity-70 rounded-xl absolute right-auto left-auto">
           <h1 className="sm:text-4xl text-3xl font-medium text-gray-700">
             {blok.title}
           </h1>
