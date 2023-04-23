@@ -13,7 +13,7 @@ const ArticleTeaser = ({ article }: any) => {
           width={200}
           height={90}
         />
-        </figure>
+      </figure>
       <div className="card-body">
         <h2 className="card-title">{article.title}</h2>
         <p>{article.teaser}</p>

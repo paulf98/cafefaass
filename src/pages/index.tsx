@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 export default function Home({story}: any) {
 
   story = useStoryblokState(story, {
-      resolveRelations: ['news.articles'],
+    resolveRelations: ['news.articles'],
   });
 
   return (
@@ -24,9 +24,9 @@ export async function getServerSideProps(context: any) {
   // get the query object
   const insideStoryblok = context.query._storyblok;
  
-  let slug = "home";
+  const slug = "home";
  
-  let sbParams: ISbStoryParams = {
+  const sbParams: ISbStoryParams = {
     version: "draft", // or 'draft'
     resolve_relations: ['news.articles'],
     resolve_links: 'url',
@@ -37,8 +37,8 @@ export async function getServerSideProps(context: any) {
   }
  
   const storyblokApi = getStoryblokApi();
-  let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
-  let { data: config } = await storyblokApi.get('cdn/stories/config'); 
+  const { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
+  const { data: config } = await storyblokApi.get('cdn/stories/config'); 
   
   return {
     props: {
