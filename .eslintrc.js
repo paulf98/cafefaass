@@ -22,6 +22,8 @@ module.exports = {
   ],
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "indent": ["error", 2]
+    "indent": ["error", 2],
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unused-vars": "error",
   }
 }

@@ -1,7 +1,5 @@
 import Head from "next/head"
- 
 import { ISbStoryParams, StoryblokComponent, getStoryblokApi, useStoryblokState } from "@storyblok/react"
-import Layout from "../components/Layout";
  
 export default function Home({story}: any) {
 
