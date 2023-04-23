@@ -3,7 +3,7 @@ import Image from "next/image";
  
 const Article = ({ blok }: any) => {
   return (
-    <section className="text-gray-600 body-font w-full">
+    <section className="lg:ml-[320px] mt-16 min-h-screen">
       <header
         className="flex items-center justify-center h-72 mb-12 relative"
       >

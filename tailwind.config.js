@@ -8,7 +8,7 @@ module.exports = {
   daisyui: {
     themes: [
       {
-          pastel: {
+        pastel: {
           ...require('daisyui/src/colors/themes')['[data-theme=pastel]'],
           primary: '#D74178',
           '.btn-primary': {

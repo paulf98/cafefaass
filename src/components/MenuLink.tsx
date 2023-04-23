@@ -7,7 +7,7 @@ const MenuLink = ({blok}: any) => {
   // need to prepend a slash to the cached_url, otherwise the comparison will fail
   const isActive = router.asPath === '/' + blok.link.cached_url
   return (
-    <Link href={blok.link.cached_url} {...storyblokEditable(blok)} className={["btn btn-ghost normal-case", isActive && 'bg-teal-100'].join(' ')}>
+    <Link href={blok.link.cached_url} {...storyblokEditable(blok)} className={["btn btn-ghost normal-case justify-start lg:justify-center", isActive && 'bg-teal-100'].join(' ')}>
       {blok.name}
     </Link>
   )

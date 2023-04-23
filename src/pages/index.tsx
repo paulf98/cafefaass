@@ -16,7 +16,7 @@ export default function Home({story}: any) {
       <div>
         <StoryblokComponent blok={story.content} />
         <iframe src="https://www.google.com/maps/embed?pb=!4v1682258884249!6m8!1m7!1sCAoSLEFGMVFpcE41ZXJQX3U1am5zbWtSWDV4SjRpWFhhOTFDWEtOTDhMYTJZU1Z1!2m2!1d49.171149135264!2d7.6537392569871!3f358.91136826072454!4f1.1010259471528343!5f0.5970117501821992"  loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-          className="w-full h-96 ml-[320px]"
+          className="w-full h-96 lg:ml-[320px]"
         ></iframe>
       </div>
     </>
