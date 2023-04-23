@@ -24,7 +24,7 @@ export async function getStaticProps({ params }: any) {
   const slug = params.slug ? params.slug.join("/") : "home";
  
   const sbParams: ISbStoryParams = {
-    version: "draft", // or 'published'
+    version: process.env.STORYBLOK_STORY_VERSION as ('draft' | 'published') || 'published', 
     resolve_links: 'url',
   };
  

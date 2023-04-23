@@ -25,7 +25,7 @@ export async function getServerSideProps(context: any) {
   const slug = "home";
  
   const sbParams: ISbStoryParams = {
-    version: "draft", // or 'draft'
+    version: process.env.STORYBLOK_STORY_VERSION as ('draft' | 'published') || 'published', 
     resolve_relations: ['news.articles'],
     resolve_links: 'url',
   };
