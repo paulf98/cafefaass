@@ -13,6 +13,7 @@ import News from '../components/News';
 import Config from '../components/Config';
 import MenuLink from '../components/MenuLink';
 import Layout from '../components/Layout';
+import Navigation from '../components/Navigation';
 
 const components = {
   article: Article,
@@ -21,6 +22,7 @@ const components = {
   feature: Feature,
   grid: Grid,
   news: News,
+  navigation: Navigation,
   teaser: Teaser,
   page: Page,
   text: Text,

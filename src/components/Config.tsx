@@ -1,4 +1,4 @@
-import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
+import { StoryblokComponent } from "@storyblok/react";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from '../../public/Logo.svg';
@@ -28,13 +28,11 @@ const Config = ({blok, children}: any) => {
           {/* DESKTOP NAVIGATION */}
           <div className='flex-none hidden lg:block ml-auto w-100'>
             <ul className='menu menu-horizontal bg-base-100 rounded-box p-2 z-50'>
-              <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-10" {...storyblokEditable({blok})}>
-                {blok.navigation.map((nestedBlok: any) => (
-                  <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid}>
-                    {children}
-                  </StoryblokComponent>
-                ))}
-              </div>
+              {blok.navigation.map((nestedBlok: any) => (
+                <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid}>
+                  {children}
+                </StoryblokComponent>
+              ))}
             </ul>
                 
           </div>
@@ -49,15 +47,6 @@ const Config = ({blok, children}: any) => {
           <Sidebar />
           {children}
         </div>
-      </div>
-      <div className='drawer-side'>
-        <label htmlFor='my-drawer-3' className='drawer-overlay'></label>
-        {/* MOBILE NAVIGATION */}
-        {blok.navigation.map((nestedBlok: any) => (
-          <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid}>
-            {children}
-          </StoryblokComponent>
-        ))}
       </div>
     </div>
   );
