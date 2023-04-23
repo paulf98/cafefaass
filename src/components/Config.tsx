@@ -2,8 +2,8 @@ import { StoryblokComponent } from "@storyblok/react";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from '../../public/Logo.svg';
-import Sidebar from "./Sidebar";
 import { AiOutlineMenu } from "react-icons/ai";
+import Sidebar from "./Sidebar";
 
 const Config = ({blok, children}: any) => {
   return (
@@ -43,7 +43,7 @@ const Config = ({blok, children}: any) => {
                 Kontakt
           </Link>
         </div>
-        <div className='mt-20 lg:flex'>
+        <div className="relative">
           <Sidebar />
           {children}
         </div>
