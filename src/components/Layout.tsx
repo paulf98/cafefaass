@@ -1,11 +1,12 @@
 import Navigation from "./Navigation";
 import Footer from "./Footer";
+import Config from "./Config";
  
-const Layout = ({ children }: {children: React.ReactNode}) => (
+const Layout = ({ children, story }: {children: React.ReactNode, story: any}) => (
   <>
-    <Navigation>
+    <Config blok={story.content}>
       {children}
-    </Navigation>
+    </Config>
     <Footer />
   </>
 );

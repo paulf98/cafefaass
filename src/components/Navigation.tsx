@@ -3,8 +3,9 @@ import Link from 'next/link';
 import Logo from '../../public/Logo.svg';
 import { MdArrowDropDown } from 'react-icons/md';
 import Sidebar from './Sidebar';
+import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
 
-export default function Navigation({ children }: { children: React.ReactNode }) {
+export default function Navigation({ blok, children }: { blok: any, children: React.ReactNode }) {
 	return (
 		<div className='drawer'>
 			<input
@@ -39,23 +40,13 @@ export default function Navigation({ children }: { children: React.ReactNode }) 
 					{/* DESKTOP NAVIGATION */}
 					<div className='flex-none hidden lg:block ml-auto w-100'>
 						<ul className='menu menu-horizontal bg-base-100 rounded-box p-2 z-50'>
-							<li>
-								<Link href={'/about'}>Über uns</Link>
-							</li>
-							<li tabIndex={0}>
-								<span>
-									Verein <MdArrowDropDown />
-								</span>
-								<ul className='rounded-box bg-white p-2 z-50'>
-									<li>
-										<Link href={'/verein/chronik'}>Chronik</Link>
-									</li>
-									<li>
-										<Link href={'/verein/vorstand'}>Vorstand</Link>
-									</li>
-								</ul>
-							</li>
+							<div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-10" {...storyblokEditable({blok})}>
+								{blok.links.map((nestedBlok: any) => (
+									<StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+								))}
+							</div>
 						</ul>
+						
 					</div>
 					<Link
 						className='btn btn-primary ml-auto hidden lg:inline-flex'
@@ -75,22 +66,6 @@ export default function Navigation({ children }: { children: React.ReactNode }) 
 				<ul className='menu w-52 bg-base-100 rounded-r-lg p-2'>
 					<li>
 						<Link href={'/about'}>Über uns</Link>
-					</li>
-					<li tabIndex={0}>
-						<span>
-							Veranstaltungen <MdArrowDropDown />
-						</span>
-						<ul className='rounded-box bg-base-100 p-2'>
-							<li>
-								<Link href={'/veranstaltungen/laufspass'}>Laufspass</Link>
-							</li>
-							<li>
-								<Link href={'/veranstaltungen/traillauf'}>Traillauf</Link>
-							</li>
-							<li>
-								<Link href={'/veranstaltungen/zeltlager'}>Zeltlager</Link>
-							</li>
-						</ul>
 					</li>
 					<li tabIndex={0}>
 						<span>

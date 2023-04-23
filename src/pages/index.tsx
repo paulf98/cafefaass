@@ -10,15 +10,13 @@ export default function Home({story}: any) {
   });
 
   return (
-    <div>
+    <>
       <Head>
         <title>Café Faass - Lemberg</title>
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
-      <Layout>
-        <StoryblokComponent blok={story.content} />
-      </Layout>
-    </div>
+      <StoryblokComponent blok={story.content} />
+    </>
   )
 }
  
@@ -29,8 +27,9 @@ export async function getServerSideProps(context: any) {
   let slug = "home";
  
   let sbParams: ISbStoryParams = {
-    version: "published", // or 'draft'
+    version: "draft", // or 'draft'
     resolve_relations: ['news.articles'],
+    resolve_links: 'url',
   };
  
   if (insideStoryblok) {
@@ -39,11 +38,13 @@ export async function getServerSideProps(context: any) {
  
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
- 
+  let { data: config } = await storyblokApi.get('cdn/stories/config'); 
+  
   return {
     props: {
       story: data ? data.story : false,
       key: data ? data.story.id : false,
+      config: config ? config.story : false,
     },
   };
 }

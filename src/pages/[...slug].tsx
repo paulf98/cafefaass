@@ -16,9 +16,7 @@ export default function Page({ story }: any) {
       <Head>
         <title>Café Faass - {story ? story.name : ""}</title>
       </Head>
-      <Layout>
-        <StoryblokComponent blok={story.content} />
-      </Layout>
+      <StoryblokComponent blok={story.content} />
     </div>
   );
 }
@@ -27,16 +25,19 @@ export async function getStaticProps({ params }: any) {
   let slug = params.slug ? params.slug.join("/") : "home";
  
   let sbParams: ISbStoryParams = {
-    version: "published", // or 'published'
+    version: "draft", // or 'published'
+    resolve_links: 'url',
   };
  
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
+  let { data: config } = await storyblokApi.get('cdn/stories/config'); 
  
   return {
     props: {
       story: data ? data.story : false,
       key: data ? data.story.id : false,
+      config: config ? config.story : false,
     },
     revalidate: 3600,
   };
@@ -45,7 +46,7 @@ export async function getStaticProps({ params }: any) {
 export async function getStaticPaths() {
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get("cdn/links/" ,{
-    version: 'published'
+    version: 'draft'
   });
  
   let paths: any[] = [];
