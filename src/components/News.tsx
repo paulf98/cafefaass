@@ -6,7 +6,7 @@ const News = ({ blok }: any) => {
     <div className='py-8 mb-4'>
       <h1 className='text-center text-4xl font-bold mb-8'>{blok.title}</h1>
       <div
-        className="grid w-full grid-cols-1 gap-6 mx-auto px-4 lg:grid-cols-3 lg:px-24 md:px-16"
+        className="w-full flex gap-6 mx-auto px-4 md:px-8 flex-wrap justify-around"
         {...storyblokEditable(blok)}
       >
         {blok.articles.map((article: any) => {

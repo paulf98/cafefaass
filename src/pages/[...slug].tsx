@@ -8,14 +8,18 @@ import {
 } from "@storyblok/react";
  
 export default function Page({ story }: any) {
-  story = useStoryblokState(story);
+  story = useStoryblokState(story, {
+    resolveRelations: ['news.articles'],
+  });
  
   return (
     <>
       <Head>
         <title>Café Faass - {story ? story.name : ""}</title>
       </Head>
-      <StoryblokComponent blok={story.content} />
+      <div>
+        <StoryblokComponent blok={story.content} />
+      </div>
     </>
   );
 }
@@ -25,6 +29,7 @@ export async function getStaticProps({ params }: any) {
  
   const sbParams: ISbStoryParams = {
     version: process.env.STORYBLOK_STORY_VERSION as ('draft' | 'published') || 'published', 
+    resolve_relations: ['news.articles'],
     resolve_links: 'url',
   };
  

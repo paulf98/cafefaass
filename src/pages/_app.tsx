@@ -14,6 +14,8 @@ import Config from '../components/Config';
 import MenuLink from '../components/MenuLink';
 import Layout from '../components/Layout';
 import Navigation from '../components/Navigation';
+import SecondaryMenuItem from '../components/SecondaryMenuItem';
+import SecondaryMenu from '../components/SecondaryMenu';
 
 const components = {
   article: Article,
@@ -28,6 +30,8 @@ const components = {
   text: Text,
   carousel: Carousel,
   "menu_link": MenuLink,
+  "secondary_menu": SecondaryMenu,
+  "secondary_menu_item": SecondaryMenuItem,
 };
 
 storyblokInit({
