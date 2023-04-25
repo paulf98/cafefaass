@@ -3,7 +3,7 @@ import { RiFacebookBoxFill, RiInstagramFill } from 'react-icons/ri';
 
 export default function Footer() {
   return (
-    <footer className='footer footer-center p-4 py-8 sm:p-10 bg-primary text-base-100 z-50'>
+    <footer className='footer footer-center p-4 py-8 sm:p-10 bg-primary text-base-100 z-40'>
       <div className='flex flex-wrap justify-center gap-4 text-lg'>
         <Link className='link link-hover' href={'/impressum'}>
 					Impressum
