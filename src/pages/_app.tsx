@@ -16,6 +16,7 @@ import Layout from '../components/Layout';
 import Navigation from '../components/Navigation';
 import SecondaryMenuItem from '../components/SecondaryMenuItem';
 import SecondaryMenu from '../components/SecondaryMenu';
+import Img from '../components/Image';
 
 const components = {
   article: Article,
@@ -29,6 +30,7 @@ const components = {
   page: Page,
   text: Text,
   carousel: Carousel,
+  img: Img,
   "menu_link": MenuLink,
   "secondary_menu": SecondaryMenu,
   "secondary_menu_item": SecondaryMenuItem,
