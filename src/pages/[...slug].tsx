@@ -50,7 +50,7 @@ export async function getStaticProps({ params }: any) {
 export async function getStaticPaths() {
   const storyblokApi = getStoryblokApi();
   const { data } = await storyblokApi.get("cdn/links/" ,{
-    version: 'draft'
+    version: process.env.STORYBLOK_STORY_VERSION as ('draft' | 'published') || 'published',
   });
  
   const paths: any[] = [];
