@@ -23,7 +23,7 @@ const Article = ({ blok }: any) => {
           </h1>
         </div>
       </header>
-      <div className="prose mx-auto text-center">
+      <div className="px-4 prose mx-auto text-center">
         <div className="text-center w-full">
          
           {blok.subtitle && 

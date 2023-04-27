@@ -5,7 +5,7 @@ const Page = ({ blok }: any) => {
     return <div>Loading...</div>;
   }
   return (
-    <main className="py-10 lg:ml-[320px] mt-16 min-h-screen" {...storyblokEditable(blok)}>
+    <main className="py-10 px-4 lg:ml-[320px] mt-16 min-h-screen" {...storyblokEditable(blok)}>
       {blok.body.map((nestedBlok: any) => (
         <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
       ))}
