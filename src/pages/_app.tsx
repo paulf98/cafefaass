@@ -17,6 +17,7 @@ import Navigation from '../components/Navigation';
 import SecondaryMenuItem from '../components/SecondaryMenuItem';
 import SecondaryMenu from '../components/SecondaryMenu';
 import Img from '../components/Image';
+import Video from '../components/Video';
 
 const components = {
   article: Article,
@@ -31,6 +32,7 @@ const components = {
   text: Text,
   carousel: Carousel,
   img: Img,
+  video: Video,
   "menu_link": MenuLink,
   "secondary_menu": SecondaryMenu,
   "secondary_menu_item": SecondaryMenuItem,
