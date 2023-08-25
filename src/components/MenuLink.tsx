@@ -8,7 +8,7 @@ const MenuLink = ({blok}: any) => {
   const isActive = router.asPath === '/' + blok.link.cached_url
   return (
     <Link href={blok.link.cached_url} {...storyblokEditable(blok)} className={["btn btn-ghost normal-case justify-start lg:justify-center", isActive && 'bg-gray-200'].join(' ')}>
-      {blok.name}
+    {blok.name}
     </Link>
   )
 }
