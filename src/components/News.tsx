@@ -3,7 +3,7 @@ import { storyblokEditable } from '@storyblok/react';
 
 const News = ({ blok }: any) => {
   return (
-    <div className='py-8 mb-4'>
+    <div className='py-8 mb-4 max-w-screen-xl mx-auto'>
       <h1 className='text-center text-4xl font-bold mb-8'>{blok.title}</h1>
       <div
         className="w-full flex gap-6 mx-auto px-4 md:px-8 flex-wrap justify-around"
