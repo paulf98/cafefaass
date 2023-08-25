@@ -1,54 +1,75 @@
-import { StoryblokComponent } from "@storyblok/react";
-import Image from "next/image";
-import Link from "next/link";
+import { StoryblokComponent } from '@storyblok/react';
+import Image from 'next/image';
+import Link from 'next/link';
 import Logo from '../../public/Logo.svg';
 
-const Config = ({blok, children}: any) => {
-  return (
-    <div className="drawer">
-      <input className="drawer-toggle" id="my-drawer-3" type="checkbox" /> 
-      <div className="drawer-content flex flex- flex-col overflow-x-hidden">
-        <nav className="w-full navbar border-b bg-base-100 fixed z-50">
-          <div className="flex-none lg:hidden">
-            <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </label>
-          </div> 
-          <Link href={'/'} className='btn btn-ghost normal-case text-xl'>
-            <Image src={Logo} alt='Cafe Faass' width={40} height={40} />{' '}
-            <span className='ml-4'>Startseite</span>
-          </Link>
-          <div className="hidden lg:flex justify-center flex-1">
-            {blok.navigation.map((nestedBlok: any) => (
-              <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid}>
-                {children}
-              </StoryblokComponent>
-            ))}
-          </div>
-          <Link
-            className='btn btn-primary ml-auto hidden sm:inline-flex'
-            href={'/kontakt'}>
-               Kontakt
-          </Link>
-        </nav>
-        {children}
-      </div> 
-      <div className="drawer-side">
-        <label htmlFor="my-drawer-3" className="drawer-overlay"></label> 
-        <ul className="menu p-4 w-80 h-full bg-base-100 mt-16">
-          {blok.navigation.map((nestedBlok: any) => (
-            <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid}>
-              {children}
-            </StoryblokComponent>
-          ))}
-          <li className='mt-auto'>
-            <Link className='sm:hidden btn btn-primary ' href={'/kontakt'}>
+const Config = ({ blok, children }: any) => {
+	return (
+		<div className='drawer'>
+			<input
+				className='drawer-toggle'
+				id='mobile-menu-drawer'
+				type='checkbox'
+			/>
+			<div className='drawer-content flex flex- flex-col overflow-x-hidden'>
+				<nav className='w-full navbar border-b bg-base-100 fixed z-50'>
+					<div className='flex-none lg:hidden'>
+						<label
+							htmlFor='mobile-menu-drawer'
+							className='btn btn-square btn-ghost'>
+							<svg
+								xmlns='http://www.w3.org/2000/svg'
+								fill='none'
+								viewBox='0 0 24 24'
+								className='inline-block w-6 h-6 stroke-current'>
+								<path
+									strokeLinecap='round'
+									strokeLinejoin='round'
+									strokeWidth='2'
+									d='M4 6h16M4 12h16M4 18h16'></path>
+							</svg>
+						</label>
+					</div>
+					<Link href={'/'} className='btn btn-ghost normal-case text-xl'>
+						<Image src={Logo} alt='Cafe Faass' width={40} height={40} />{' '}
+						<span className='ml-4'>Startseite</span>
+					</Link>
+
+					{/* The Top Navbar */}
+					<div className='hidden md:flex flex-1 items-center justify-center md:w-0 gap-0 lg:gap-4'>
+						{blok.navigation.map((nestedBlok: any) => (
+							<StoryblokComponent blok={nestedBlok} key={nestedBlok._uid}>
+								{children}
+							</StoryblokComponent>
+						))}
+					</div>
+
+					<Link
+						className='btn btn-primary ml-auto hidden sm:inline-flex'
+						href={'/kontakt'}>
+						Kontakt
+					</Link>
+				</nav>
+				{children}
+			</div>
+			<div className='drawer-side'>
+				<label htmlFor='mobile-menu-drawer' className='drawer-overlay'></label>
+
+				{/* The Mobile SideNavbar */}
+				<ul className='menu p-4 w-80 h-full bg-base-100 pt-16'>
+					{blok.navigation.map((nestedBlok: any) => (
+						<StoryblokComponent blok={nestedBlok} key={nestedBlok._uid}>
+							{children}
+						</StoryblokComponent>
+					))}
+					<li className='sm:hidden mt-auto'>
+						<Link className=' btn btn-primary' href={'/kontakt'}>
 							Kontakt
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </div>
-  );
+						</Link>
+					</li>
+				</ul>
+			</div>
+		</div>
+	);
 };
 export default Config;
