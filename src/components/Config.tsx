@@ -56,7 +56,7 @@ const Config = ({ blok, children }: any) => {
 				<label htmlFor='mobile-menu-drawer' className='drawer-overlay'></label>
 
 				{/* The Mobile SideNavbar */}
-				<ul className='menu p-4 w-80 h-full bg-base-100 pt-16'>
+				<ul className='menu p-4 w-80 h-full overflow-y-auto flex-nowrap bg-base-100 pt-16'>
 					{blok.navigation.map((nestedBlok: any) => (
 						<StoryblokComponent blok={nestedBlok} key={nestedBlok._uid}>
 							{children}
