@@ -58,6 +58,7 @@ export async function getServerSideProps(context: any) {
 			'published',
 		resolve_relations: ['news.articles'],
 		resolve_links: 'url',
+		token: process.env.STORYBLOK_API_TOKEN,
 	};
 
 	if (insideStoryblok) {
