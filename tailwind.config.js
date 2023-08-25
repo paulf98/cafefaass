@@ -9,7 +9,7 @@ module.exports = {
     themes: [
       {
         pastel: {
-          ...require('daisyui/src/colors/themes')['[data-theme=pastel]'],
+          ...require('daisyui/src/theming/themes')['[data-theme=pastel]'],
           primary: '#D74178',
           '.btn-primary': {
             'color': 'white',

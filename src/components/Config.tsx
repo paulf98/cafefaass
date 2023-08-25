@@ -6,7 +6,7 @@ import Logo from '../../public/Logo.svg';
 const Config = ({blok, children}: any) => {
   return (
     <div className="drawer">
-      <input id="my-drawer-3" type="checkbox" className="drawer-toggle" /> 
+      <input className="drawer-toggle" id="my-drawer-3" type="checkbox" /> 
       <div className="drawer-content flex flex- flex-col overflow-x-hidden">
         <nav className="w-full navbar border-b bg-base-100 fixed z-50">
           <div className="flex-none lg:hidden">
@@ -34,8 +34,8 @@ const Config = ({blok, children}: any) => {
         {children}
       </div> 
       <div className="drawer-side">
-        <label htmlFor="my-drawer-3" className="drawer-overlay bg-primary!"></label> 
-        <ul className="menu p-4 w-80 bg-base-100">
+        <label htmlFor="my-drawer-3" className="drawer-overlay"></label> 
+        <ul className="menu p-4 w-80 h-full bg-base-100 mt-16">
           {blok.navigation.map((nestedBlok: any) => (
             <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid}>
               {children}
