@@ -1,77 +1,77 @@
 import Head from 'next/head';
 
 import {
-	useStoryblokState,
-	getStoryblokApi,
-	StoryblokComponent,
-	ISbStoryParams,
+  useStoryblokState,
+  getStoryblokApi,
+  StoryblokComponent,
+  ISbStoryParams,
 } from '@storyblok/react';
 
 export default function Page({ story }: any) {
-	story = useStoryblokState(story, {
-		resolveRelations: ['news.articles'],
-	});
+  story = useStoryblokState(story, {
+    resolveRelations: ['news.articles'],
+  });
 
-	return (
-		<>
-			<Head>
-				<title>Café Faass - {story ? story.name : ''}</title>
-			</Head>
-			<div>
-				<StoryblokComponent blok={story.content} />
-			</div>
-		</>
-	);
+  return (
+    <>
+      <Head>
+        <title>Café Faass - {story ? story.name : ''}</title>
+      </Head>
+      <div>
+        <StoryblokComponent blok={story.content} />
+      </div>
+    </>
+  );
 }
 
 export async function getStaticProps({ params }: any) {
-	const slug = params.slug ? params.slug.join('/') : 'home';
+  const slug = params.slug ? params.slug.join('/') : 'home';
 
-	const sbParams: ISbStoryParams = {
-		version:
+  const sbParams: ISbStoryParams = {
+    version:
 			(process.env.STORYBLOK_STORY_VERSION as 'draft' | 'published') ||
 			'published',
-		resolve_relations: ['news.articles'],
-		resolve_links: 'url',
-		token: process.env.STORYBLOK_API_TOKEN,
-	};
+    resolve_relations: ['news.articles'],
+    resolve_links: 'url',
+    token: process.env.STORYBLOK_API_TOKEN,
+  };
 
-	const storyblokApi = getStoryblokApi();
-	const { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
-	const { data: config } = await storyblokApi.get('cdn/stories/config');
+  const storyblokApi = getStoryblokApi();
+  const { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
+  const { data: config } = await storyblokApi.get('cdn/stories/config');
 
-	return {
-		props: {
-			story: data ? data.story : false,
-			key: data ? data.story.id : false,
-			config: config ? config.story : false,
-		},
-		revalidate: 3600,
-	};
+  return {
+    props: {
+      story: data ? data.story : false,
+      key: data ? data.story.id : false,
+      config: config ? config.story : false,
+    },
+    revalidate: 3600,
+  };
 }
 
 export async function getStaticPaths() {
-	const storyblokApi = getStoryblokApi();
-	const { data } = await storyblokApi.get('cdn/links/', {
-		version:
+  const storyblokApi = getStoryblokApi();
+  const { data } = await storyblokApi.get('cdn/links/', {
+    version:
 			(process.env.STORYBLOK_STORY_VERSION as 'draft' | 'published') ||
 			'published',
-	});
+  });
 
-	const paths: any[] = [];
-	Object.keys(data.links).forEach((linkKey) => {
-		if (data.links[linkKey].is_folder || data.links[linkKey].slug === 'home') {
-			return;
-		}
+  const paths: any[] = [];
+  Object.keys(data.links).forEach((linkKey) => {
+    if (data.links[linkKey].is_folder || data.links[linkKey].slug === 'home') {
+      return;
+    }
 
-		const slug = data.links[linkKey].slug;
-		const splittedSlug = slug.split('/');
+    const slug = data.links[linkKey].slug;
+    const splittedSlug = slug.split('/');
 
-		paths.push({ params: { slug: splittedSlug } });
-	});
+    paths.push({ params: { slug: splittedSlug } });
+  });
 
-	return {
-		paths: paths,
-		fallback: false,
-	};
+  return {
+    paths: paths,
+    fallback: false,
+  };
 }

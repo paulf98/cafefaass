@@ -20,34 +20,34 @@ import MenuLinkWithSubmenu from '../components/MenuLinkWithSubmenu';
 import SubmenuItem from '../components/SubmenuItem';
 
 const components = {
-	article: Article,
-	articleTeaser: ArticleTeaser,
-	config: Config,
-	feature: Feature,
-	grid: Grid,
-	news: News,
-	navigation: Navigation,
-	teaser: Teaser,
-	page: Page,
-	text: Text,
-	carousel: Carousel,
-	img: Img,
-	video: Video,
-	menu_link: MenuLink,
-	menu_link_with_submenu: MenuLinkWithSubmenu,
-	submenu_item: SubmenuItem,
+  article: Article,
+  articleTeaser: ArticleTeaser,
+  config: Config,
+  feature: Feature,
+  grid: Grid,
+  news: News,
+  navigation: Navigation,
+  teaser: Teaser,
+  page: Page,
+  text: Text,
+  carousel: Carousel,
+  img: Img,
+  video: Video,
+  menu_link: MenuLink,
+  menu_link_with_submenu: MenuLinkWithSubmenu,
+  submenu_item: SubmenuItem,
 };
 
 storyblokInit({
-	accessToken: process.env.STORYBLOK_API_TOKEN,
-	use: [apiPlugin],
-	components,
+  accessToken: process.env.STORYBLOK_API_TOKEN,
+  use: [apiPlugin],
+  components,
 });
 
 export default function App({ Component, pageProps }: AppProps) {
-	return (
-		<Layout story={pageProps.config}>
-			<Component {...pageProps} />
-		</Layout>
-	);
+  return (
+    <Layout story={pageProps.config}>
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
