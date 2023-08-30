@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app';
 import { storyblokInit, apiPlugin } from '@storyblok/react';
 import Feature from '../components/Feature';
 import Grid from '../components/Grid';
-import Teaser from '../components/Teaser';
+import Headline from '../components/Headline';
 import Page from '../components/Page';
 import Text from '../components/Text';
 import Carousel from '../components/Carousel';
@@ -29,7 +29,7 @@ const components = {
   grid: Grid,
   news: News,
   navigation: Navigation,
-  teaser: Teaser,
+  headline: Headline,
   page: Page,
   text: Text,
   carousel: Carousel,
