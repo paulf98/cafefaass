@@ -50,20 +50,20 @@ export default function OpeningHours() {
               return (
                 <React.Fragment key={openingHour.day}>
                   <tr key={openingHour.day}>
-                    <td>{openingHour.day}</td>
-                    <td>{openingHour.openingHours}</td>
+                    <td className='py-2'>{openingHour.day}</td>
+                    <td className='py-2'>{openingHour.openingHours}</td>
                   </tr>
                   <tr key={openingHour.day + '_2'}>
-                    <td></td>
-                    <td>{openingHour.openingHours2}</td>
+                    <td className='py-2'></td>
+                    <td className='py-2'>{openingHour.openingHours2}</td>
                   </tr>
                 </React.Fragment>
               );
             }
             return (
               <tr key={openingHour.day}>
-                <td>{openingHour.day}</td>
-                <td>{openingHour.openingHours}</td>
+                <td className='py-2'>{openingHour.day}</td>
+                <td className='py-2'>{openingHour.openingHours}</td>
               </tr>
             );
           })}
