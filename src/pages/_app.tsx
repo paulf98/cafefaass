@@ -18,10 +18,12 @@ import Img from '../components/Image';
 import Video from '../components/Video';
 import MenuLinkWithSubmenu from '../components/MenuLinkWithSubmenu';
 import SubmenuItem from '../components/SubmenuItem';
+import Banner from '../components/Banner';
 
 const components = {
   article: Article,
   articleTeaser: ArticleTeaser,
+  banner: Banner,
   config: Config,
   feature: Feature,
   grid: Grid,
