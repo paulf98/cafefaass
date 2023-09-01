@@ -13,7 +13,6 @@ import News from '../components/News';
 import Config from '../components/Config';
 import MenuLink from '../components/MenuLink';
 import Layout from '../components/Layout';
-import Navigation from '../components/Navigation';
 import Img from '../components/Image';
 import Video from '../components/Video';
 import MenuLinkWithSubmenu from '../components/MenuLinkWithSubmenu';
@@ -28,7 +27,6 @@ const components = {
   feature: Feature,
   grid: Grid,
   news: News,
-  navigation: Navigation,
   headline: Headline,
   page: Page,
   text: Text,
