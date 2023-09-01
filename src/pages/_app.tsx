@@ -18,11 +18,13 @@ import Video from '../components/Video';
 import MenuLinkWithSubmenu from '../components/MenuLinkWithSubmenu';
 import SubmenuItem from '../components/SubmenuItem';
 import Banner from '../components/Banner';
+import Brot from '../components/Brot';
 
 const components = {
   article: Article,
   articleTeaser: ArticleTeaser,
   banner: Banner,
+  brot: Brot,
   config: Config,
   feature: Feature,
   grid: Grid,
