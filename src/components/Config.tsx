@@ -1,9 +1,28 @@
+"use client";
 import { StoryblokComponent } from '@storyblok/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Logo from '../../public/Logo.svg';
+import { useEffect } from 'react';
 
 const Config = ({ blok, children }: any) => {
+  // remove the open attribute from all details elements if one is clicked
+  useEffect(() => {
+    const details = document.querySelectorAll("details");
+
+    // Add the onclick listeners.
+    details.forEach((targetDetail) => {
+      targetDetail.addEventListener("click", () => {
+        // Close all the details that are not targetDetail.
+        details.forEach((detail) => {
+          if (detail !== targetDetail) {
+            detail.removeAttribute("open");
+          }
+        });
+      });
+    });
+  }, [])
+
   return (
     <div className='drawer'>
       <input
@@ -31,18 +50,18 @@ const Config = ({ blok, children }: any) => {
             </label>
           </div>
           <Link href={'/'} className='btn btn-ghost normal-case text-xl'>
-            <Image src={Logo} alt='Cafe Faass' width={40} height={40} />{' '}
+            <Image src={Logo} alt='Cafe Faass' width={40} />
             <span className='ml-4'>Startseite</span>
           </Link>
 
           {/* The Top Navbar */}
-          <div className='hidden md:flex flex-1 items-center justify-center md:w-0 gap-0 lg:gap-4'>
+          <ul className='menu lg:menu-horizontal hidden lg:flex flex-1 items-center justify-center md:w-0 lg:gap-4'>
             {blok.navigation.map((nestedBlok: any) => (
               <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid}>
                 {children}
               </StoryblokComponent>
             ))}
-          </div>
+          </ul>
 
           <Link
             className='btn btn-primary ml-auto hidden sm:inline-flex'

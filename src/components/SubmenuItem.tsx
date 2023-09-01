@@ -8,22 +8,35 @@ export default function SubmenuItem({ blok }: any) {
 
   const isActive = router.asPath === '/' + blok.link.cached_url;
 
-  return (
-    <Link
-      href={blok.link.cached_url}
-      {...storyblokEditable(blok)}
-      onClick={() => {
+  return (  
+    <li>
+      <Link
+        href={blok.link.cached_url}
+        {...storyblokEditable(blok)}
+        onClick={() => {
         // close the drawer by clicking the checkbox element with ID: mobile-menu-drawer
-        const checkbox = document.getElementById(
-          'mobile-menu-drawer'
-        ) as HTMLInputElement;
-        checkbox.checked = false;
-      }}
-      className={[
-        'btn btn-ghost w-full normal-case justify-start',
-        isActive && 'bg-gray-200',
-      ].join(' ')}>
-      {blok.name}
-    </Link>
+          const checkbox = document.getElementById(
+            'mobile-menu-drawer'
+          ) as HTMLInputElement;
+          checkbox.checked = false;
+
+          const details = document.querySelectorAll("details");
+
+          // Add the onclick listeners.
+          details.forEach((targetDetail) => {
+            // Close all the details that are not targetDetail.
+            details.forEach((detail) => {
+              if (detail !== targetDetail) {
+                detail.removeAttribute("open");
+              }
+            });
+          });
+        }}
+        className={[
+          isActive && 'bg-gray-200',
+        ].join(' ')}>
+        {blok.name}
+      </Link>
+    </li>
   );
 }
