@@ -9,6 +9,7 @@ export default function Banner ({ blok }: any)  {
       src={blok.image.filename} 
       alt={blok.image.alt}
       loading="eager"
+      priority={true}
       width={480}
       height={270}
       style={{
