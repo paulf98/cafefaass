@@ -4,10 +4,9 @@ import { useRouter } from 'next/router';
 const MenuLinkWithSubmenu = ({ blok }: any) => {
   const router = useRouter();
 
-  const isActive = router.asPath.startsWith(
+  const isActive = (router.asPath + "/").startsWith(
     '/' + blok.items[0].link.cached_url
   );
-  console.log(isActive)
 
   return (
     <li>
@@ -17,7 +16,11 @@ const MenuLinkWithSubmenu = ({ blok }: any) => {
           target.removeAttribute('open');
         }}
       >
-        <summary>{blok.name}</summary>
+        <summary className={[
+          isActive && 'bg-gray-200',
+        ].join(' ')}>
+          {blok.name}
+        </summary>
         <ul>
           {blok.items.map((nestedBlok: any) => (
             <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid}  />
