@@ -82,7 +82,7 @@ const Config = ({ blok, children }: any) => {
             </StoryblokComponent>
           ))}
           <li className='sm:hidden mt-auto'>
-            <Link className=' btn btn-primary' href={'/kontakt'}>
+            <Link className=' btn btn-primary content-center' href={'/kontakt'}>
 							Kontakt
             </Link>
           </li>
