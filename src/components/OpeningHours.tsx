@@ -35,8 +35,8 @@ const OPENING_HOURS = [
 export default function OpeningHours() {
   return (
     <div>
-      <h2 className='text-xl text-center font-bold mb-4'>Öffnungszeiten</h2>
-      <table className='table table-zebra table-compact w-full'>
+      <h2 className="mb-4 text-center text-xl font-bold">Öffnungszeiten</h2>
+      <table className="table-compact table table-zebra w-full">
         {/* head */}
         <thead>
           <tr>
@@ -50,20 +50,20 @@ export default function OpeningHours() {
               return (
                 <React.Fragment key={openingHour.day}>
                   <tr key={openingHour.day}>
-                    <td className='py-2'>{openingHour.day}</td>
-                    <td className='py-2'>{openingHour.openingHours}</td>
+                    <td className="py-2">{openingHour.day}</td>
+                    <td className="py-2">{openingHour.openingHours}</td>
                   </tr>
                   <tr key={openingHour.day + '_2'}>
-                    <td className='py-2'></td>
-                    <td className='py-2'>{openingHour.openingHours2}</td>
+                    <td className="py-2"></td>
+                    <td className="py-2">{openingHour.openingHours2}</td>
                   </tr>
                 </React.Fragment>
               );
             }
             return (
               <tr key={openingHour.day}>
-                <td className='py-2'>{openingHour.day}</td>
-                <td className='py-2'>{openingHour.openingHours}</td>
+                <td className="py-2">{openingHour.day}</td>
+                <td className="py-2">{openingHour.openingHours}</td>
               </tr>
             );
           })}

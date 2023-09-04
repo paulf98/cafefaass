@@ -7,22 +7,28 @@ import { annotate } from 'rough-notation';
 const headlineFont = Kalam({ subsets: ['latin'], weight: '700' });
 
 const News = ({ blok }: any) => {
-
   useEffect(() => {
     const e = document.getElementById(blok._uid);
-    const annotation = annotate(e as HTMLElement, { type: 'underline', color: '#1EAE9B' });
+    const annotation = annotate(e as HTMLElement, {
+      type: 'underline',
+      color: '#1EAE9B',
+    });
     annotation.show();
   }, []);
 
   return (
-    <div className='py-8 mb-4 max-w-screen-xl mx-auto'>
-      <h2 id={blok._uid}
+    <div className="mx-auto mb-4 max-w-screen-xl py-8">
+      <h2
+        id={blok._uid}
         className={[
           'text-5xl mb-8 font-bold w-fit mx-auto text-primary',
           headlineFont.className,
-        ].join(' ')}>{blok.title}</h2>
+        ].join(' ')}
+      >
+        {blok.title}
+      </h2>
       <div
-        className="w-full flex gap-6 mx-auto px-4 md:px-8 flex-wrap justify-around"
+        className="mx-auto flex w-full flex-wrap justify-around gap-6 px-4 md:px-8"
         {...storyblokEditable(blok)}
       >
         {blok.articles.map((article: any) => {

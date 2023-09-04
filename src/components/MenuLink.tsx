@@ -13,27 +13,26 @@ const MenuLink = ({ blok }: any) => {
         {...storyblokEditable(blok)}
         href={blok.link.cached_url}
         onClick={() => {
-        // close the drawer by clicking the checkbox element with ID: mobile-menu-drawer
+          // close the drawer by clicking the checkbox element with ID: mobile-menu-drawer
           const checkbox = document.getElementById(
-            'mobile-menu-drawer'
+            'mobile-menu-drawer',
           ) as HTMLInputElement;
           checkbox.checked = false;
 
-          const details = document.querySelectorAll("details");
+          const details = document.querySelectorAll('details');
 
           // Add the onclick listeners.
           details.forEach((targetDetail) => {
             // Close all the details that are not targetDetail.
             details.forEach((detail) => {
               if (detail !== targetDetail) {
-                detail.removeAttribute("open");
+                detail.removeAttribute('open');
               }
             });
           });
         }}
-        className={[
-          isActive && 'bg-gray-200',
-        ].join(' ')}>
+        className={[isActive && 'bg-gray-200'].join(' ')}
+      >
         {blok.name}
       </Link>
     </li>

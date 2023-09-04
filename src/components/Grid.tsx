@@ -1,5 +1,5 @@
-import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
- 
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react';
+
 const Grid = ({ blok }: any) => {
   return (
     <div className="grid grid-cols-3 " {...storyblokEditable(blok)}>
@@ -11,5 +11,5 @@ const Grid = ({ blok }: any) => {
     </div>
   );
 };
- 
+
 export default Grid;

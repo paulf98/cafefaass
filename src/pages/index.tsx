@@ -15,32 +15,19 @@ export default function Home({ story }: any) {
     <>
       <Head>
         <title>Café Faass - Lemberg</title>
-        <link
-          rel='apple-touch-icon'
-          sizes='180x180'
-          href='/apple-touch-icon.png'
-        />
-        <link
-          rel='icon'
-          type='image/png'
-          sizes='32x32'
-          href='/favicon-32x32.png'
-        />
-        <link
-          rel='icon'
-          type='image/png'
-          sizes='16x16'
-          href='/favicon-16x16.png'
-        />
-        <link rel='manifest' href='/site.webmanifest' />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <div>
         <StoryblokComponent blok={story.content} />
         <iframe
-          src='https://www.google.com/maps/embed?pb=!4v1682258884249!6m8!1m7!1sCAoSLEFGMVFpcE41ZXJQX3U1am5zbWtSWDV4SjRpWFhhOTFDWEtOTDhMYTJZU1Z1!2m2!1d49.171149135264!2d7.6537392569871!3f358.91136826072454!4f1.1010259471528343!5f0.5970117501821992'
-          loading='lazy'
-          referrerPolicy='no-referrer-when-downgrade'
-          className='w-full h-96 lg:ml-[320px]'></iframe>
+          src="https://www.google.com/maps/embed?pb=!4v1682258884249!6m8!1m7!1sCAoSLEFGMVFpcE41ZXJQX3U1am5zbWtSWDV4SjRpWFhhOTFDWEtOTDhMYTJZU1Z1!2m2!1d49.171149135264!2d7.6537392569871!3f358.91136826072454!4f1.1010259471528343!5f0.5970117501821992"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="h-96 w-full lg:ml-[320px]"
+        ></iframe>
       </div>
     </>
   );
@@ -54,8 +41,7 @@ export async function getServerSideProps(context: any) {
 
   const sbParams: ISbStoryParams = {
     version:
-			(process.env.STORYBLOK_STORY_VERSION as 'draft' | 'published') ||
-			'published',
+      (process.env.STORYBLOK_STORY_VERSION as 'draft' | 'published') || 'published',
     resolve_relations: ['news.articles'],
     resolve_links: 'url',
     token: process.env.STORYBLOK_API_TOKEN,

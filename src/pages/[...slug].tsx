@@ -29,8 +29,7 @@ export async function getStaticProps({ params }: any) {
 
   const sbParams: ISbStoryParams = {
     version:
-			(process.env.STORYBLOK_STORY_VERSION as 'draft' | 'published') ||
-			'published',
+      (process.env.STORYBLOK_STORY_VERSION as 'draft' | 'published') || 'published',
     resolve_relations: ['news.articles'],
     resolve_links: 'url',
     token: process.env.STORYBLOK_API_TOKEN,
@@ -54,8 +53,7 @@ export async function getStaticPaths() {
   const storyblokApi = getStoryblokApi();
   const { data } = await storyblokApi.get('cdn/links/', {
     version:
-			(process.env.STORYBLOK_STORY_VERSION as 'draft' | 'published') ||
-			'published',
+      (process.env.STORYBLOK_STORY_VERSION as 'draft' | 'published') || 'published',
   });
 
   const paths: any[] = [];

@@ -1,12 +1,12 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 /**
  * A full width banner image.
  */
-export default function Banner ({ blok }: any)  {
+export default function Banner({ blok }: any) {
   return (
-    <Image 
-      src={blok.image.filename} 
+    <Image
+      src={blok.image.filename}
       alt={blok.image.alt}
       loading="eager"
       priority={true}
@@ -15,9 +15,7 @@ export default function Banner ({ blok }: any)  {
       style={{
         objectFit: 'contain',
       }}
-      className="w-full max-w-prose mx-auto h-auto mb-12"
+      className="mx-auto mb-12 h-auto w-full max-w-prose"
     />
-      
   );
 }
- 

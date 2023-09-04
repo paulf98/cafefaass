@@ -1,7 +1,6 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { storyblokInit, apiPlugin } from '@storyblok/react';
-import Feature from '../components/Feature';
 import Grid from '../components/Grid';
 import Headline from '../components/Headline';
 import Page from '../components/Page';
@@ -26,7 +25,6 @@ const components = {
   banner: Banner,
   brot: Brot,
   config: Config,
-  feature: Feature,
   grid: Grid,
   news: News,
   headline: Headline,

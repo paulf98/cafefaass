@@ -1,8 +1,8 @@
-import Footer from "./Footer";
-import Config from "./Config";
-import Sidebar from "./Sidebar";
- 
-const Layout = ({ children, story }: {children: React.ReactNode, story: any}) => {
+import Footer from './Footer';
+import Config from './Config';
+import Sidebar from './Sidebar';
+
+const Layout = ({ children, story }: { children: React.ReactNode; story: any }) => {
   if (!story) return <div>Loading...</div>;
   return (
     <Config blok={story.content}>
@@ -11,6 +11,6 @@ const Layout = ({ children, story }: {children: React.ReactNode, story: any}) =>
       <Footer />
     </Config>
   );
-}
+};
 
 export default Layout;

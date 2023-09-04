@@ -4,9 +4,7 @@ import { useRouter } from 'next/router';
 const MenuLinkWithSubmenu = ({ blok }: any) => {
   const router = useRouter();
 
-  const isActive = (router.asPath + "/").startsWith(
-    '/' + blok.items[0].link.cached_url
-  );
+  const isActive = (router.asPath + '/').startsWith('/' + blok.items[0].link.cached_url);
 
   return (
     <li>
@@ -16,14 +14,10 @@ const MenuLinkWithSubmenu = ({ blok }: any) => {
           target.removeAttribute('open');
         }}
       >
-        <summary className={[
-          isActive && 'bg-gray-200',
-        ].join(' ')}>
-          {blok.name}
-        </summary>
+        <summary className={[isActive && 'bg-gray-200'].join(' ')}>{blok.name}</summary>
         <ul>
           {blok.items.map((nestedBlok: any) => (
-            <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid}  />
+            <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
           ))}
         </ul>
       </details>
@@ -31,4 +25,3 @@ const MenuLinkWithSubmenu = ({ blok }: any) => {
   );
 };
 export default MenuLinkWithSubmenu;
-
