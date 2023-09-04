@@ -1,15 +1,18 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { storyblokInit, apiPlugin } from '@storyblok/react';
+// Content blocks
+import Article from '../components/content/Article';
+import Config from '../components/content/Config';
+import Page from '../components/content/Page';
+import Torte from '../components/content/Torte';
+// Components
 import Grid from '../components/Grid';
 import Headline from '../components/Headline';
-import Page from '../components/content/Page';
 import Text from '../components/Text';
 import Carousel from '../components/Carousel';
-import Article from '../components/content/Article';
 import ArticleTeaser from '../components/ArticleTeaser';
 import News from '../components/News';
-import Config from '../components/content/Config';
 import MenuLink from '../components/MenuLink';
 import Layout from '../components/Layout';
 import Img from '../components/Image';
@@ -18,30 +21,36 @@ import MenuLinkWithSubmenu from '../components/MenuLinkWithSubmenu';
 import SubmenuItem from '../components/SubmenuItem';
 import Banner from '../components/Banner';
 import Brot from '../components/Brot';
+import Tortenliste from '../components/Tortenliste';
+
+const contentBlocks = {
+  article: Article,
+  config: Config,
+  page: Page,
+  torte: Torte,
+};
 
 const components = {
-  article: Article,
   articleTeaser: ArticleTeaser,
   banner: Banner,
   brot: Brot,
-  config: Config,
   grid: Grid,
   news: News,
   headline: Headline,
-  page: Page,
   text: Text,
   carousel: Carousel,
   img: Img,
-  video: Video,
   menu_link: MenuLink,
   menu_link_with_submenu: MenuLinkWithSubmenu,
   submenu_item: SubmenuItem,
+  tortenliste: Tortenliste,
+  video: Video,
 };
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_API_TOKEN,
   use: [apiPlugin],
-  components,
+  components: { ...contentBlocks, ...components },
 });
 
 export default function App({ Component, pageProps }: AppProps) {

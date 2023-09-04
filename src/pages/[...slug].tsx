@@ -7,9 +7,11 @@ import {
   ISbStoryParams,
 } from '@storyblok/react';
 
+const resolveRelations = ['news.articles', 'tortenliste.torten'];
+
 export default function Page({ story }: any) {
   story = useStoryblokState(story, {
-    resolveRelations: ['news.articles'],
+    resolveRelations,
   });
 
   return (
@@ -30,7 +32,7 @@ export async function getStaticProps({ params }: any) {
   const sbParams: ISbStoryParams = {
     version:
       (process.env.STORYBLOK_STORY_VERSION as 'draft' | 'published') || 'published',
-    resolve_relations: ['news.articles'],
+    resolve_relations: resolveRelations,
     resolve_links: 'url',
     token: process.env.STORYBLOK_API_TOKEN,
   };
