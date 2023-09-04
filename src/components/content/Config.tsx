@@ -2,7 +2,7 @@
 import { StoryblokComponent } from '@storyblok/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Logo from '../../public/Logo.svg';
+import Logo from '../../../public/Logo.svg';
 import { useEffect } from 'react';
 
 const Config = ({ blok, children }: any) => {

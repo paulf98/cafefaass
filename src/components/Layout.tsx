@@ -1,5 +1,5 @@
 import Footer from './Footer';
-import Config from './Config';
+import Config from './content/Config';
 import Sidebar from './Sidebar';
 
 const Layout = ({ children, story }: { children: React.ReactNode; story: any }) => {
