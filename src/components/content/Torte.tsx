@@ -25,9 +25,11 @@ export default function Torte({ blok }: any) {
         Zurück zur Übersicht
       </Link>
       <Heading id={blok._uid} text={blok.title} />
-      <div className="mx-auto my-16 max-w-prose rounded-md border shadow">
-        <ImageGallery items={images} />
-      </div>
+      {images.length > 0 && (
+        <div className="mx-auto my-16 max-w-prose rounded-md border shadow">
+          <ImageGallery items={images} />
+        </div>
+      )}
       <article
         className={['prose mx-auto px-4 mb-8', blok.text_justify].join(' ')}
         dangerouslySetInnerHTML={{ __html: renderRichText(blok.text) }}
