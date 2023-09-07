@@ -1,5 +1,5 @@
+'use client';
 import Head from 'next/head';
-
 import {
   useStoryblokState,
   getStoryblokApi,
