@@ -22,6 +22,7 @@ import SubmenuItem from '../components/SubmenuItem';
 import Banner from '../components/Banner';
 import Brot from '../components/Brot';
 import Tortenliste from '../components/Tortenliste';
+import ImageGallery from '../components/ImageGallery';
 
 const contentBlocks = {
   article: Article,
@@ -40,6 +41,7 @@ const components = {
   text: Text,
   carousel: Carousel,
   img: Img,
+  image_gallery: ImageGallery,
   menu_link: MenuLink,
   menu_link_with_submenu: MenuLinkWithSubmenu,
   submenu_item: SubmenuItem,
