@@ -1,4 +1,5 @@
 import { storyblokEditable } from '@storyblok/react';
+import Image from 'next/image';
 import Gallery from 'react-image-gallery';
 
 export default function ImageGallery({ blok }: any) {
@@ -12,10 +13,22 @@ export default function ImageGallery({ blok }: any) {
   if (images.length === 0) return null;
   return (
     <div
-      className="mx-auto my-16 max-w-prose rounded-md border shadow"
+      className="mx-auto my-16 max-h-[400px] max-w-prose rounded-md border shadow"
       {...storyblokEditable(blok)}
     >
-      <Gallery items={images} />
+      <Gallery
+        items={images}
+        renderItem={(item: any) => (
+          <div className="h-[200px]">
+            <Image
+              src={item.original}
+              alt={item.originalAlt}
+              className="h-full w-full object-contain"
+              layout="fill"
+            />
+          </div>
+        )}
+      />
     </div>
   );
 }

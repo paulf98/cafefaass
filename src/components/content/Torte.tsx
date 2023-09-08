@@ -4,6 +4,7 @@ import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import Link from 'next/link';
 import { FaArrowLeft } from 'react-icons/fa';
+import Image from 'next/image';
 
 export default function Torte({ blok }: any) {
   const images = blok.images.map((image: any) => ({
@@ -26,8 +27,20 @@ export default function Torte({ blok }: any) {
       </Link>
       <Heading id={blok._uid} text={blok.title} />
       {images.length > 0 && (
-        <div className="mx-auto my-16 max-w-prose rounded-md border shadow">
-          <ImageGallery items={images} />
+        <div className="mx-auto my-16 max-h-[400px] max-w-prose rounded-md border shadow">
+          <ImageGallery
+            items={images}
+            renderItem={(item: any) => (
+              <div className="h-[200px]">
+                <Image
+                  src={item.original}
+                  alt={item.originalAlt}
+                  className="h-full w-full object-contain"
+                  layout="fill"
+                />
+              </div>
+            )}
+          />
         </div>
       )}
       <article
