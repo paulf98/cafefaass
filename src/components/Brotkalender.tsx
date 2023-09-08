@@ -18,9 +18,25 @@ export default function Brotkalender({ blok }: any) {
           </tr>
         </thead>
         <tbody>
-          {blok.items.map((item: any) => (
-            <StoryblokComponent blok={item} key={item._uid} />
-          ))}
+          {blok.items
+            .sort((a: any, b: any) => a.name.toLowerCase() > b.name.toLowerCase())
+            .map((item: any, index: number) => (
+              <>
+                {index !== 0 && index % 10 === 0 && (
+                  <tr>
+                    <th></th>
+                    <td>MO</td>
+                    <td>DI</td>
+                    <td>MI</td>
+                    <td>DO</td>
+                    <td>FR</td>
+                    <td>SA</td>
+                    <td>SO</td>
+                  </tr>
+                )}
+                <StoryblokComponent blok={item} key={item._uid} />
+              </>
+            ))}
         </tbody>
         <tfoot>
           <tr>
