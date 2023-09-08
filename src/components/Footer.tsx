@@ -15,11 +15,11 @@ export default function Footer() {
         />
         <div className="flex flex-col items-start gap-1">
           <h4 className="mb-2 text-lg font-bold">Weitere Links</h4>
+          <Link className="link-hover link" href={'/geschichte'}>
+            Unsere Geschichte
+          </Link>
           <Link className="link-hover link" href={'/stellenangebote'}>
             Stellenangebote
-          </Link>
-          <Link className="link-hover link" href={'/geschichte'}>
-            Geschichte
           </Link>
           <Link className="link-hover link" href={'/ernaehrung-und-gesundheit'}>
             Ernährung & Gesundheit
