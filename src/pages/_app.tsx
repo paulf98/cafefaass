@@ -23,6 +23,8 @@ import Banner from '../components/Banner';
 import Brot from '../components/Brot';
 import Tortenliste from '../components/Tortenliste';
 import ImageGallery from '../components/ImageGallery';
+import Brotkalender from '../components/Brotkalender';
+import BrotkalenderItem from '../components/BrotkalenderItem';
 
 const contentBlocks = {
   article: Article,
@@ -35,6 +37,8 @@ const components = {
   articleTeaser: ArticleTeaser,
   banner: Banner,
   brot: Brot,
+  brotkalender: Brotkalender,
+  brotkalender_item: BrotkalenderItem,
   grid: Grid,
   news: News,
   headline: Headline,
