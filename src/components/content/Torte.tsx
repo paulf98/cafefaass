@@ -16,7 +16,7 @@ export default function Torte({ blok }: any) {
     <section className="relative mt-36 min-h-screen lg:ml-[320px]">
       <Link
         href="/konditorei/torten"
-        className="fixed top-[69px] z-10 flex flex-row items-center justify-center border-b bg-white py-2 text-center"
+        className="fixed top-[65px] z-10 flex flex-row items-center justify-center border-b bg-white py-2 text-center lg:top-[69px]"
         style={{
           width: '-webkit-fill-available',
         }}
