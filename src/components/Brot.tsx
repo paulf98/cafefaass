@@ -4,6 +4,7 @@ import { Kalam } from 'next/font/google';
 const headlineFont = Kalam({ subsets: ['latin'], weight: '700' });
 
 export default function Brot({ blok }: any) {
+  if (!blok.show) return null;
   return (
     <li className="mx-auto mt-8 flex max-w-prose flex-col gap-4 rounded-md border shadow-sm sm:flex-row even:sm:flex-row-reverse">
       <Image
