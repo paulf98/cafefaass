@@ -7,7 +7,7 @@ export default function TorteTeaser({ torte }: any) {
 
   return (
     <div className="card w-96 bg-base-100 shadow-xl" {...storyblokEditable(torte)}>
-      {torte.teaser_img.filename && (
+      {torte && torte.teaser_img && torte.teaser_img.filename && (
         <div className="relative mb-4 h-64">
           <figure>
             <Image

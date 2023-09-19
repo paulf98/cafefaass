@@ -7,11 +7,14 @@ import { FaArrowLeft } from 'react-icons/fa';
 import Image from 'next/image';
 
 export default function Torte({ blok }: any) {
-  const images = blok.images.map((image: any) => ({
-    original: image.filename,
-    thumbnail: image.filename,
-    originalAlt: image.alt,
-  }));
+  let images = [];
+  if (blok.images && blok.images.length > 0) {
+    images = blok.images.map((image: any) => ({
+      original: image.filename,
+      thumbnail: image.filename,
+      originalAlt: image.alt,
+    }));
+  }
 
   return (
     <section className="relative mt-36 min-h-screen lg:ml-[320px]">
