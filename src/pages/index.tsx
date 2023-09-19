@@ -8,7 +8,11 @@ import {
 
 export default function Home({ story }: any) {
   story = useStoryblokState(story, {
-    resolveRelations: ['news.articles'],
+    resolveRelations: [
+      'news.articles',
+      'tortenliste.torten',
+      'stellenangebote.stellenangebote',
+    ],
   });
 
   return (
@@ -42,7 +46,11 @@ export async function getServerSideProps(context: any) {
   const sbParams: ISbStoryParams = {
     version:
       (process.env.STORYBLOK_STORY_VERSION as 'draft' | 'published') || 'published',
-    resolve_relations: ['news.articles'],
+    resolve_relations: [
+      'news.articles',
+      'tortenliste.torten',
+      'stellenangebote.stellenangebote',
+    ],
     resolve_links: 'url',
     token: process.env.STORYBLOK_API_TOKEN,
   };

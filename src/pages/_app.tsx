@@ -25,6 +25,9 @@ import Tortenliste from '../components/Tortenliste';
 import ImageGallery from '../components/ImageGallery';
 import Brotkalender from '../components/Brotkalender';
 import BrotkalenderItem from '../components/BrotkalenderItem';
+import Stellenangebote from '../components/Stellenangebote';
+import StellenangebotTeaser from '../components/StellenangebotTeaser';
+import Stellenangebot from '../components/content/Stellenangebot';
 
 const contentBlocks = {
   article: Article,
@@ -48,6 +51,9 @@ const components = {
   image_gallery: ImageGallery,
   menu_link: MenuLink,
   menu_link_with_submenu: MenuLinkWithSubmenu,
+  stellenangebote: Stellenangebote,
+  stellenangebot: Stellenangebot,
+  stellenangebote_teaser: StellenangebotTeaser,
   submenu_item: SubmenuItem,
   tortenliste: Tortenliste,
   video: Video,

@@ -7,7 +7,11 @@ import {
   ISbStoryParams,
 } from '@storyblok/react';
 
-const resolveRelations = ['news.articles', 'tortenliste.torten'];
+const resolveRelations = [
+  'news.articles',
+  'tortenliste.torten',
+  'stellenangebote.stellenangebote',
+];
 
 export default function Page({ story }: any) {
   story = useStoryblokState(story, {
