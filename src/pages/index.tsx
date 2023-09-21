@@ -52,7 +52,7 @@ export async function getServerSideProps(context: any) {
       'stellenangebote.stellenangebote',
     ],
     resolve_links: 'url',
-    token: process.env.STORYBLOK_API_TOKEN,
+    token: process.env.STORYBLOK_API_TOKEN as string,
   };
 
   if (insideStoryblok) {

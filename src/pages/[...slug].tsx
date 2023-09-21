@@ -38,7 +38,7 @@ export async function getStaticProps({ params }: any) {
       (process.env.STORYBLOK_STORY_VERSION as 'draft' | 'published') || 'published',
     resolve_relations: resolveRelations,
     resolve_links: 'url',
-    token: process.env.STORYBLOK_API_TOKEN,
+    token: process.env.STORYBLOK_API_TOKEN as string,
   };
 
   const storyblokApi = getStoryblokApi();
