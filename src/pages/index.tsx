@@ -37,10 +37,7 @@ export default function Home({ story }: any) {
   );
 }
 
-export async function getServerSideProps(context: any) {
-  // get the query object
-  const insideStoryblok = context.query._storyblok;
-
+export async function getServerSideProps() {
   const slug = 'home';
 
   const sbParams: ISbStoryParams = {
@@ -54,10 +51,6 @@ export async function getServerSideProps(context: any) {
     resolve_links: 'url',
     token: process.env.STORYBLOK_API_TOKEN as string,
   };
-
-  if (insideStoryblok) {
-    sbParams.version = 'draft';
-  }
 
   const storyblokApi = getStoryblokApi();
   const { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
