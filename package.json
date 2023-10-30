@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
-    "@types/react-image-gallery": "^1.2.0",
+    "@types/react-image-gallery": "^1.2.2",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.8.0",
     "eslint": "8.51.0",
