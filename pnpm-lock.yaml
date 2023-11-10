@@ -62,8 +62,8 @@ devDependencies:
     specifier: ^0.5.10
     version: 0.5.10(tailwindcss@3.3.3)
   '@types/react-image-gallery':
-    specifier: ^1.2.0
-    version: 1.2.0
+    specifier: ^1.2.2
+    version: 1.2.2
   '@typescript-eslint/eslint-plugin':
     specifier: ^6.7.2
     version: 6.7.2(@typescript-eslint/parser@6.8.0)(eslint@8.51.0)(typescript@5.2.2)
@@ -365,8 +365,8 @@ packages:
       '@types/react': 18.2.31
     dev: false
 
-  /@types/react-image-gallery@1.2.0:
-    resolution: {integrity: sha512-y5OEficUWcnGEc6KvflRXgvhtaMSsDH6JGT3/SJs0FV/RgtKuIgrUpGbDw5MdzyUwe/D8sJTo+aw8NOkaX0nIA==}
+  /@types/react-image-gallery@1.2.2:
+    resolution: {integrity: sha512-rP+0s4s26K66pPzV5+ZuOEpVSBmB8cIX2+Fmf9GI9NBTHt5u9MwtTkfxTHIzkA+4J8Enhf+PphWN/rq5/X4BDw==}
     dependencies:
       '@types/react': 18.2.31
     dev: true
