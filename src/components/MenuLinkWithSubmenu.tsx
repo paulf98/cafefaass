@@ -5,9 +5,7 @@ import { type MenuLinkWithSubmenuStoryblok } from '../../component-types-sb';
 const MenuLinkWithSubmenu = (blok: MenuLinkWithSubmenuStoryblok) => {
   const router = useRouter();
 
-  const isActive =
-    blok.items &&
-    (router.asPath + '/').startsWith('/' + blok.items[0].link?.cached_url || '/');
+  const isActive = (router.asPath + '/').startsWith('/' + blok.items[0].link?.cached_url);
 
   return (
     <li>
@@ -19,10 +17,9 @@ const MenuLinkWithSubmenu = (blok: MenuLinkWithSubmenuStoryblok) => {
       >
         <summary className={[isActive && 'bg-gray-200'].join(' ')}>{blok.name}</summary>
         <ul>
-          {blok.items &&
-            blok.items.map((nestedBlok) => (
-              <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
-            ))}
+          {blok.items.map((nestedBlok: any) => (
+            <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+          ))}
         </ul>
       </details>
     </li>
