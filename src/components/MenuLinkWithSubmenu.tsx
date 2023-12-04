@@ -1,10 +1,11 @@
 import { StoryblokComponent } from '@storyblok/react';
 import { useRouter } from 'next/router';
+import { type MenuLinkWithSubmenuStoryblok } from '../../component-types-sb';
 
-const MenuLinkWithSubmenu = ({ blok }: any) => {
+const MenuLinkWithSubmenu = (blok: MenuLinkWithSubmenuStoryblok) => {
   const router = useRouter();
 
-  const isActive = (router.asPath + '/').startsWith('/' + blok.items[0].link.cached_url);
+  const isActive = (router.asPath + '/').startsWith('/' + blok.items[0].link?.cached_url);
 
   return (
     <li>
