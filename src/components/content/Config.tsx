@@ -59,7 +59,7 @@ const Config = ({
           {/* The Top Navbar */}
           <ul className="menu hidden flex-1 items-center justify-center lg:menu-horizontal md:w-0 lg:flex lg:gap-4">
             {blok.navigation &&
-              blok.navigation.map((nestedBlok: any) => (
+              blok.navigation.map((nestedBlok) => (
                 <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid}>
                   {children}
                 </StoryblokComponent>
