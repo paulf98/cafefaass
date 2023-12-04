@@ -1,7 +1,6 @@
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react';
-import { type PageStoryblok } from '../../../component-types-sb';
 
-const Page = (blok: PageStoryblok) => {
+const Page = ({ blok }: any) => {
   if (!blok || !blok.body) {
     return <div>Loading...</div>;
   }

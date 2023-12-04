@@ -1,17 +1,14 @@
 import { storyblokEditable } from '@storyblok/react';
 import Image from 'next/image';
 import Gallery from 'react-image-gallery';
-import { type ImageGalleryStoryblok } from '../../component-types-sb';
 
-export default function ImageGallery(blok: ImageGalleryStoryblok) {
+export default function ImageGallery({ blok }: any) {
   const images =
-    (blok.images &&
-      blok.images.map((image: any) => ({
-        original: image.filename,
-        thumbnail: image.filename,
-        originalAlt: image.alt,
-      }))) ||
-    [];
+    blok?.images.map((image: any) => ({
+      original: image.filename,
+      thumbnail: image.filename,
+      originalAlt: image.alt,
+    })) || [];
 
   if (images.length === 0) return null;
   return (

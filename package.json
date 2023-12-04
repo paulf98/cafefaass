@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint-fix": "next lint --fix",
-    "proxy": "mkcert -install && mkcert localhost && local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem",
-    "generate-sb-types": "storyblok-generate-ts source=./components.224316.json target=./component-types-sb"
+    "proxy": "mkcert -install && mkcert localhost && local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem"
   },
   "dependencies": {
     "@storyblok/react": "^2.4.7",
@@ -41,7 +40,6 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-tailwindcss": "^3.13.0",
     "prettier": "^3.1.0",
-    "prettier-plugin-tailwindcss": "^0.5.7",
-    "storyblok-generate-ts": "^2.0.1"
+    "prettier-plugin-tailwindcss": "^0.5.7"
   }
 }

@@ -3,11 +3,10 @@ import ArticleTeaser from './ArticleTeaser';
 import { storyblokEditable } from '@storyblok/react';
 import { Kalam } from 'next/font/google';
 import { annotate } from 'rough-notation';
-import { type NewsStoryblok } from '../../component-types-sb';
 
 const headlineFont = Kalam({ subsets: ['latin'], weight: '700' });
 
-const News = (blok: NewsStoryblok) => {
+const News = ({ blok }: any) => {
   useEffect(() => {
     const e = document.getElementById(blok._uid);
     const annotation = annotate(e as HTMLElement, {
@@ -32,19 +31,10 @@ const News = (blok: NewsStoryblok) => {
         className="mx-auto flex w-full flex-wrap justify-around gap-6 px-4 md:px-8"
         {...storyblokEditable(blok)}
       >
-        {blok.articles &&
-          blok.articles.map((article) => {
-            if (typeof article === 'string') return null;
-            article.content.slug = article.slug;
-            return (
-              <ArticleTeaser
-                article={article.content}
-                key={article.uuid}
-                _uid={article.uuid}
-                component={'article'}
-              />
-            );
-          })}
+        {blok.articles.map((article: any) => {
+          article.content.slug = article.slug;
+          return <ArticleTeaser article={article.content} key={article.uuid} />;
+        })}
       </div>
     </div>
   );

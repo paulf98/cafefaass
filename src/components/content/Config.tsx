@@ -4,15 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Logo from '../../../public/Logo.svg';
 import { useEffect } from 'react';
-import { type ConfigStoryblok } from '../../../component-types-sb';
 
-const Config = ({
-  blok,
-  children,
-}: {
-  blok: ConfigStoryblok;
-  children: React.ReactNode;
-}) => {
+const Config = ({ blok, children }: any) => {
   // remove the open attribute from all details elements if one is clicked
   useEffect(() => {
     const details = document.querySelectorAll('details');
@@ -58,12 +51,11 @@ const Config = ({
           </Link>
           {/* The Top Navbar */}
           <ul className="menu hidden flex-1 items-center justify-center lg:menu-horizontal md:w-0 lg:flex lg:gap-4">
-            {blok.navigation &&
-              blok.navigation.map((nestedBlok: any) => (
-                <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid}>
-                  {children}
-                </StoryblokComponent>
-              ))}
+            {blok.navigation.map((nestedBlok: any) => (
+              <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid}>
+                {children}
+              </StoryblokComponent>
+            ))}
           </ul>
           <Link
             className="btn-primary btn ml-auto hidden sm:inline-flex"
@@ -78,12 +70,11 @@ const Config = ({
         <label htmlFor="mobile-menu-drawer" className="drawer-overlay"></label>
         {/* The Mobile SideNavbar */}
         <ul className="menu h-full w-80 flex-nowrap overflow-y-auto bg-base-100 p-4 pt-16">
-          {blok.navigation &&
-            blok.navigation.map((nestedBlok: any) => (
-              <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid}>
-                {children}
-              </StoryblokComponent>
-            ))}
+          {blok.navigation.map((nestedBlok: any) => (
+            <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid}>
+              {children}
+            </StoryblokComponent>
+          ))}
           <li className="mt-auto sm:hidden">
             <Link className=" btn-primary btn content-center" href={'/kontakt'}>
               Kontakt
