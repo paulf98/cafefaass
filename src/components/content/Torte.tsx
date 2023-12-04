@@ -5,17 +5,9 @@ import 'react-image-gallery/styles/css/image-gallery.css';
 import Link from 'next/link';
 import { FaArrowLeft } from 'react-icons/fa';
 import Image from 'next/image';
+import { type TorteStoryblok } from '../../../component-types-sb';
 
-export default function Torte({ blok }: any) {
-  let images = [];
-  if (blok.images && blok.images.length > 0) {
-    images = blok.images.map((image: any) => ({
-      original: image.filename,
-      thumbnail: image.filename,
-      originalAlt: image.alt,
-    }));
-  }
-
+export default function Torte(blok: TorteStoryblok) {
   return (
     <section className="relative mt-36 min-h-screen lg:ml-[320px]">
       <Link
@@ -28,16 +20,20 @@ export default function Torte({ blok }: any) {
         <FaArrowLeft className="mr-4" />
         Zurück zur Übersicht
       </Link>
-      <Heading id={blok._uid} text={blok.title} />
-      {images.length > 0 && (
+      <Heading id={blok._uid} text={blok.title || ''} />
+      {blok.images && blok.images.length > 0 && (
         <div className="mx-auto my-16 max-h-[400px] max-w-prose rounded-md border shadow">
           <ImageGallery
-            items={images}
-            renderItem={(item: any) => (
+            items={blok.images.map((image) => ({
+              original: image.filename,
+              thumbnail: image.filename,
+              originalAlt: image.alt,
+            }))}
+            renderItem={(item) => (
               <div className="h-[200px]">
                 <Image
                   src={item.original}
-                  alt={item.originalAlt}
+                  alt={item.originalAlt || item.original}
                   className="h-full w-full object-contain"
                   layout="fill"
                 />

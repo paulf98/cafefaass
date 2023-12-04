@@ -1,8 +1,9 @@
 'use client';
 import { storyblokEditable } from '@storyblok/react';
 import StellenangebotTeaser from './StellenangebotTeaser';
+import { type StellenangebotStoryblok } from '../../component-types-sb';
 
-export default function Stellenangebote({ blok }: any) {
+export default function Stellenangebote(blok: StellenangebotStoryblok) {
   console.log(blok);
   return (
     <div className="mx-auto mb-4 max-w-screen-xl py-8">
@@ -19,6 +20,8 @@ export default function Stellenangebote({ blok }: any) {
               <StellenangebotTeaser
                 stellenangebot={stellenangebot.content}
                 key={stellenangebot.uuid}
+                _uid={stellenangebot.uuid}
+                component={'stellenangebote'}
               />
             );
           })}

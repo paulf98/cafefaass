@@ -2,16 +2,17 @@ import { storyblokEditable } from '@storyblok/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { type SubmenuItemStoryblok } from '../../component-types-sb';
 
-export default function SubmenuItem({ blok }: any) {
+export default function SubmenuItem(blok: SubmenuItemStoryblok) {
   const router = useRouter();
 
-  const isActive = router.asPath === '/' + blok.link.cached_url;
+  const isActive = router.asPath === '/' + blok.link?.cached_url;
 
   return (
     <li>
       <Link
-        href={blok.link.cached_url}
+        href={blok.link?.cached_url || '/'}
         {...storyblokEditable(blok)}
         onClick={() => {
           // close the drawer by clicking the checkbox element with ID: mobile-menu-drawer

@@ -1,17 +1,18 @@
 import { storyblokEditable } from '@storyblok/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { type MenuLinkStoryblok } from '../../component-types-sb';
 
-const MenuLink = ({ blok }: any) => {
+const MenuLink = (blok: MenuLinkStoryblok) => {
   const router = useRouter();
 
   // need to prepend a slash to the cached_url, otherwise the comparison will fail
-  const isActive = router.asPath === '/' + blok.link.cached_url;
+  const isActive = router.asPath === '/' + blok.link?.cached_url;
   return (
     <li>
       <Link
         {...storyblokEditable(blok)}
-        href={blok.link.cached_url}
+        href={blok.link?.cached_url || '/'}
         onClick={() => {
           // close the drawer by clicking the checkbox element with ID: mobile-menu-drawer
           const checkbox = document.getElementById(
