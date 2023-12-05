@@ -1,6 +1,7 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { storyblokInit, apiPlugin } from '@storyblok/react';
+import { Analytics } from '@vercel/analytics/react';
 // Content blocks
 import Article from '../components/content/Article';
 import Config from '../components/content/Config';
@@ -69,6 +70,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <Layout story={pageProps.config}>
       <Component {...pageProps} />
+      <Analytics />
     </Layout>
   );
 }
