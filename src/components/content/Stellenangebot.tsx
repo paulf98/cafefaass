@@ -1,10 +1,9 @@
 'use client';
-import { type StellenangebotStoryblok } from '../../../component-types-sb';
+import { type StellenangebotStoryblok } from '../../types/component-types-sb';
 import Headline from '../Headline';
 import { StoryblokComponent } from '@storyblok/react';
 
-export default function Stellenangebot(blok: StellenangebotStoryblok) {
-  console.log(blok);
+export default function Stellenangebot({ blok }: StellenangebotStoryblok) {
   return (
     <main className="relative mt-16 min-h-screen px-4 py-10 lg:ml-80">
       {blok.name && blok.name.length > 0 && (

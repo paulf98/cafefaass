@@ -2,9 +2,9 @@ import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
 import {
   type BrotkalenderItemStoryblok,
   type BrotkalenderStoryblok,
-} from '../../component-types-sb';
+} from '../types/component-types-sb';
 
-export default function Brotkalender(blok: BrotkalenderStoryblok) {
+export default function Brotkalender({ blok }: BrotkalenderStoryblok) {
   return (
     <div className="mx-auto max-w-xl overflow-x-auto" {...storyblokEditable(blok)}>
       <table className="table table-zebra table-pin-rows table-pin-cols table-sm">

@@ -1,9 +1,9 @@
 import { storyblokEditable } from '@storyblok/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { type TorteStoryblok } from '../../component-types-sb';
+import { type TorteStoryblok } from '../types/component-types-sb';
 
-export default function TorteTeaser(blok: TorteStoryblok) {
+export default function TorteTeaser({ blok }: TorteStoryblok) {
   if (!blok) return null;
 
   return (

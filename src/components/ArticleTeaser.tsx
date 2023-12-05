@@ -1,9 +1,9 @@
 import { storyblokEditable } from '@storyblok/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { type ArticleStoryblok } from '../../component-types-sb';
+import { type ArticleStoryblok } from '../types/component-types-sb';
 
-const ArticleTeaser = (article: ArticleStoryblok) => {
+const ArticleTeaser = ({ article }: ArticleStoryblok) => {
   return (
     <div className="card w-96 bg-base-100 shadow-xl" {...storyblokEditable(article)}>
       {article.image && (

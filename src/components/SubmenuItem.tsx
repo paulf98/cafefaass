@@ -2,9 +2,9 @@ import { storyblokEditable } from '@storyblok/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { type SubmenuItemStoryblok } from '../../component-types-sb';
+import { type SubmenuItemStoryblok } from '../types/component-types-sb';
 
-export default function SubmenuItem(blok: SubmenuItemStoryblok) {
+export default function SubmenuItem({ blok }: SubmenuItemStoryblok) {
   const router = useRouter();
 
   const isActive = router.asPath === '/' + blok.link?.cached_url;

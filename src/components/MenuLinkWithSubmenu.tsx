@@ -1,8 +1,8 @@
 import { StoryblokComponent } from '@storyblok/react';
 import { useRouter } from 'next/router';
-import { type MenuLinkWithSubmenuStoryblok } from '../../component-types-sb';
+import { type MenuLinkWithSubmenuStoryblok } from '../types/component-types-sb';
 
-const MenuLinkWithSubmenu = (blok: MenuLinkWithSubmenuStoryblok) => {
+const MenuLinkWithSubmenu = ({ blok }: MenuLinkWithSubmenuStoryblok) => {
   const router = useRouter();
 
   const isActive =

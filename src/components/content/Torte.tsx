@@ -5,9 +5,9 @@ import 'react-image-gallery/styles/css/image-gallery.css';
 import Link from 'next/link';
 import { FaArrowLeft } from 'react-icons/fa';
 import Image from 'next/image';
-import { type TorteStoryblok } from '../../../component-types-sb';
+import { type TorteStoryblok } from '../../types/component-types-sb';
 
-export default function Torte(blok: TorteStoryblok) {
+export default function Torte({ blok }: TorteStoryblok) {
   return (
     <section className="relative mt-36 min-h-screen lg:ml-[320px]">
       <Link

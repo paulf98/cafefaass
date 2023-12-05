@@ -1,10 +1,13 @@
 import { storyblokEditable } from '@storyblok/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { type StellenangeboteStoryblok } from '../../component-types-sb';
+import { type StellenangebotStoryblok } from '../types/component-types-sb';
 
-export default function StellenangebotTeaser(blok: StellenangeboteStoryblok) {
-  console.log(blok);
+export default function StellenangebotTeaser({
+  blok,
+}: {
+  blok: StellenangebotStoryblok;
+}) {
   return (
     <div className="card w-80 bg-base-100 shadow-xl" {...storyblokEditable(blok)}>
       {blok && blok.bild && blok.bild.filename && (
@@ -12,7 +15,7 @@ export default function StellenangebotTeaser(blok: StellenangeboteStoryblok) {
           <Image
             className="mb-4 w-full rounded-t-xl object-cover object-center md:h-36 lg:h-48"
             src={blok.bild.filename}
-            alt={blok.bild.alt}
+            alt={blok.bild.alt || ''}
             width={200}
             height={90}
           />

@@ -3,11 +3,11 @@ import ArticleTeaser from './ArticleTeaser';
 import { storyblokEditable } from '@storyblok/react';
 import { Kalam } from 'next/font/google';
 import { annotate } from 'rough-notation';
-import { type NewsStoryblok } from '../../component-types-sb';
+import { type NewsStoryblok } from '../types/component-types-sb';
 
 const headlineFont = Kalam({ subsets: ['latin'], weight: '700' });
 
-const News = (blok: NewsStoryblok) => {
+const News = ({ blok }: NewsStoryblok) => {
   useEffect(() => {
     const e = document.getElementById(blok._uid);
     const annotation = annotate(e as HTMLElement, {

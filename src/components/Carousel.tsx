@@ -1,8 +1,8 @@
 import { storyblokEditable } from '@storyblok/react';
 import Image from 'next/image';
-import { type CarouselStoryblok } from '../../component-types-sb';
+import { type CarouselStoryblok } from '../types/component-types-sb';
 
-const Carousel = (blok: CarouselStoryblok) => {
+const Carousel = ({ blok }: CarouselStoryblok) => {
   return (
     <div
       className="prose rounded-box mx-auto my-8 flex w-full flex-nowrap justify-center md:gap-4 lg:gap-8"

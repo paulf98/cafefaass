@@ -1,9 +1,9 @@
 import { storyblokEditable } from '@storyblok/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { type MenuLinkStoryblok } from '../../component-types-sb';
+import { type MenuLinkStoryblok } from '../types/component-types-sb';
 
-const MenuLink = (blok: MenuLinkStoryblok) => {
+const MenuLink = ({ blok }: MenuLinkStoryblok) => {
   const router = useRouter();
 
   // need to prepend a slash to the cached_url, otherwise the comparison will fail

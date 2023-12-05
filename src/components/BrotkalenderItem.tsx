@@ -1,7 +1,7 @@
 import { storyblokEditable } from '@storyblok/react';
-import { BrotkalenderItemStoryblok } from '../../component-types-sb';
+import { BrotkalenderItemStoryblok } from '../types/component-types-sb';
 
-export default function BrotkalenderItem(blok: BrotkalenderItemStoryblok) {
+export default function BrotkalenderItem({ blok }: BrotkalenderItemStoryblok) {
   return (
     <tr {...storyblokEditable(blok)}>
       <th>{blok.name}</th>

@@ -1,9 +1,9 @@
 import { storyblokEditable } from '@storyblok/react';
 import TorteTeaser from './TorteTeaser';
 import Heading from './atoms/Heading';
-import { type TortenlisteStoryblok } from '../../component-types-sb';
+import { type TortenlisteStoryblok } from '../types/component-types-sb';
 
-export default function Tortenliste(blok: TortenlisteStoryblok) {
+export default function Tortenliste({ blok }: TortenlisteStoryblok) {
   if (!blok.torten) return null;
   return (
     <div className="mx-auto mb-4 max-w-screen-xl py-8" {...storyblokEditable(blok)}>

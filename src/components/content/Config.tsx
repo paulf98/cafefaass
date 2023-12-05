@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Logo from '../../../public/Logo.svg';
 import { useEffect } from 'react';
-import { type ConfigStoryblok } from '../../../component-types-sb';
+import { type ConfigStoryblok } from '../../types/component-types-sb';
 
 const Config = ({
   blok,

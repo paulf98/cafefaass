@@ -1,8 +1,8 @@
 import { storyblokEditable } from '@storyblok/react';
 import Image from 'next/image';
-import { type ImgStoryblok } from '../../component-types-sb';
+import { type ImgStoryblok } from '../types/component-types-sb';
 
-export default function Img(blok: ImgStoryblok) {
+export default function Img({ blok }: ImgStoryblok) {
   return (
     <div className="mx-auto w-4/6 max-w-prose" {...storyblokEditable(blok)}>
       {blok.image && (
