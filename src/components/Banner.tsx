@@ -1,13 +1,14 @@
 import Image from 'next/image';
+import { type BannerStoryblok } from '../types/component-types-sb';
 
 /**
  * A full width banner image.
  */
-export default function Banner({ blok }: any) {
+export default function Banner({ blok }: BannerStoryblok) {
   return (
     <Image
       src={blok.image.filename}
-      alt={blok.image.alt}
+      alt={blok.image.alt || blok.image.filename}
       loading="eager"
       priority={true}
       width={480}
