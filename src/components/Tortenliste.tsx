@@ -3,7 +3,7 @@ import TorteTeaser from './TorteTeaser';
 import Heading from './atoms/Heading';
 import { type TortenlisteStoryblok } from '../types/component-types-sb';
 
-export default function Tortenliste({ blok }: TortenlisteStoryblok) {
+export default function Tortenliste({ blok }: { blok: TortenlisteStoryblok }) {
   if (!blok.torten) return null;
   return (
     <div className="mx-auto mb-4 max-w-screen-xl py-8" {...storyblokEditable(blok)}>
@@ -12,14 +12,7 @@ export default function Tortenliste({ blok }: TortenlisteStoryblok) {
         {blok.torten.map((torte) => {
           if (typeof torte === 'string') return null;
           torte.content.slug = torte.slug;
-          return (
-            <TorteTeaser
-              torte={torte.content}
-              key={torte.uuid}
-              _uid={torte.uuid}
-              component={'torte'}
-            />
-          );
+          return <TorteTeaser blok={torte.content} key={torte.uuid} />;
         })}
       </div>
     </div>

@@ -4,7 +4,7 @@ import { type BannerStoryblok } from '../types/component-types-sb';
 /**
  * A full width banner image.
  */
-export default function Banner({ blok }: BannerStoryblok) {
+export default function Banner({ blok }: { blok: BannerStoryblok }) {
   return (
     <Image
       src={blok.image.filename}

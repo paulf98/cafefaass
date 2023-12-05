@@ -1,7 +1,7 @@
 import { storyblokEditable, renderRichText } from '@storyblok/react';
 import { type TextStoryblok } from '../types/component-types-sb';
 
-const Text = ({ blok }: TextStoryblok) => {
+const Text = ({ blok }: { blok: TextStoryblok }) => {
   return (
     <div
       className={['my-8 prose mx-auto md:text-xl', blok.alignment].join(' ')}

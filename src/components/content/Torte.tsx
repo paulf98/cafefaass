@@ -7,7 +7,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import Image from 'next/image';
 import { type TorteStoryblok } from '../../types/component-types-sb';
 
-export default function Torte({ blok }: TorteStoryblok) {
+export default function Torte({ blok }: { blok: TorteStoryblok }) {
   return (
     <section className="relative mt-36 min-h-screen lg:ml-[320px]">
       <Link

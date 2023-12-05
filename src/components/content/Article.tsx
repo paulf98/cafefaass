@@ -2,7 +2,7 @@ import { renderRichText } from '@storyblok/react';
 import Image from 'next/image';
 import { type ArticleStoryblok } from '../../types/component-types-sb';
 
-const Article = ({ blok }: ArticleStoryblok) => {
+const Article = ({ blok }: { blok: ArticleStoryblok }) => {
   return (
     <section className="mt-16 min-h-screen lg:ml-[320px]">
       <header className="relative mb-12 flex h-72 items-center justify-center">

@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { type SubmenuItemStoryblok } from '../types/component-types-sb';
 
-export default function SubmenuItem({ blok }: SubmenuItemStoryblok) {
+export default function SubmenuItem({ blok }: { blok: SubmenuItemStoryblok }) {
   const router = useRouter();
 
   const isActive = router.asPath === '/' + blok.link?.cached_url;

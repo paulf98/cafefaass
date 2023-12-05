@@ -4,7 +4,7 @@ import {
   type BrotkalenderStoryblok,
 } from '../types/component-types-sb';
 
-export default function Brotkalender({ blok }: BrotkalenderStoryblok) {
+export default function Brotkalender({ blok }: { blok: BrotkalenderStoryblok }) {
   return (
     <div className="mx-auto max-w-xl overflow-x-auto" {...storyblokEditable(blok)}>
       <table className="table table-zebra table-pin-rows table-pin-cols table-sm">

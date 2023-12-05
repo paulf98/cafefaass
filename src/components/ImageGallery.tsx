@@ -3,10 +3,10 @@ import Image from 'next/image';
 import Gallery from 'react-image-gallery';
 import { type ImageGalleryStoryblok } from '../types/component-types-sb';
 
-export default function ImageGallery({ blok }: ImageGalleryStoryblok) {
+export default function ImageGallery({ blok }: { blok: ImageGalleryStoryblok }) {
   const images =
     (blok.images &&
-      blok.images.map((image: any) => ({
+      blok.images.map((image) => ({
         original: image.filename,
         thumbnail: image.filename,
         originalAlt: image.alt,

@@ -7,7 +7,7 @@ import { type NewsStoryblok } from '../types/component-types-sb';
 
 const headlineFont = Kalam({ subsets: ['latin'], weight: '700' });
 
-const News = ({ blok }: NewsStoryblok) => {
+const News = ({ blok }: { blok: NewsStoryblok }) => {
   useEffect(() => {
     const e = document.getElementById(blok._uid);
     const annotation = annotate(e as HTMLElement, {
@@ -36,14 +36,7 @@ const News = ({ blok }: NewsStoryblok) => {
           blok.articles.map((article) => {
             if (typeof article === 'string') return null;
             article.content.slug = article.slug;
-            return (
-              <ArticleTeaser
-                article={article.content}
-                key={article.uuid}
-                _uid={article.uuid}
-                component={'article'}
-              />
-            );
+            return <ArticleTeaser article={article.content} key={article.uuid} />;
           })}
       </div>
     </div>
