@@ -36,7 +36,7 @@ export default function OpeningHours() {
   return (
     <div>
       <h2 className="mb-4 text-center text-xl font-bold">Öffnungszeiten</h2>
-      <table className="table-compact table table-zebra w-full">
+      <table className="table table-zebra w-full">
         {/* head */}
         <thead>
           <tr>
