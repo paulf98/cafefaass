@@ -46,7 +46,7 @@ export default function Footer() {
         <p className="italic">
           Copyright © {new Date().getFullYear()} - Café Faass -{' '}
           <a
-            href="https://paulf.dev"
+            href="https://www.paulf.dev/"
             className="link-hover link text-sm italic text-base-100"
             target={'_blank'}
             rel="noreferrer"
