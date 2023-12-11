@@ -5,7 +5,7 @@ import { type CarouselStoryblok } from '../types/component-types-sb';
 const Carousel = ({ blok }: { blok: CarouselStoryblok }) => {
   return (
     <div
-      className="prose rounded-box mx-auto my-8 flex w-full flex-nowrap justify-center md:gap-4 lg:gap-8"
+      className="prose mx-auto my-8 flex w-full flex-nowrap justify-center rounded-box md:gap-4 lg:gap-8"
       {...storyblokEditable(blok)}
     >
       {blok.images &&
