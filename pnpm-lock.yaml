@@ -51,8 +51,8 @@ dependencies:
     specifier: ^0.5.1
     version: 0.5.1
   tailwindcss:
-    specifier: 3.3.5
-    version: 3.3.5
+    specifier: 3.4.3
+    version: 3.4.3
   typescript:
     specifier: 5.2.2
     version: 5.2.2
@@ -60,7 +60,7 @@ dependencies:
 devDependencies:
   '@tailwindcss/typography':
     specifier: ^0.5.10
-    version: 0.5.10(tailwindcss@3.3.5)
+    version: 0.5.10(tailwindcss@3.4.3)
   '@types/react-image-gallery':
     specifier: ^1.2.4
     version: 1.2.4
@@ -84,7 +84,7 @@ devDependencies:
     version: 7.33.2(eslint@8.55.0)
   eslint-plugin-tailwindcss:
     specifier: ^3.13.1
-    version: 3.13.1(tailwindcss@3.3.5)
+    version: 3.13.1(tailwindcss@3.4.3)
   prettier:
     specifier: ^3.1.1
     version: 3.1.1
@@ -547,7 +547,7 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@tailwindcss/typography@0.5.10(tailwindcss@3.3.5):
+  /@tailwindcss/typography@0.5.10(tailwindcss@3.4.3):
     resolution: {integrity: sha512-Pe8BuPJQJd3FfRnm6H0ulKIGoMEQS+Vq01R6M5aCrFB/ccR/shT+0kXLjouGC1gFLm9hopTFN+DMP0pfwRWzPw==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
@@ -556,7 +556,7 @@ packages:
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.3.5
+      tailwindcss: 3.4.3
     dev: true
 
   /@types/glob@7.2.0:
@@ -1693,7 +1693,7 @@ packages:
       semver: 6.3.1
       string.prototype.matchall: 4.0.9
 
-  /eslint-plugin-tailwindcss@3.13.1(tailwindcss@3.3.5):
+  /eslint-plugin-tailwindcss@3.13.1(tailwindcss@3.4.3):
     resolution: {integrity: sha512-2Nlgr9doO6vFAG9w4iGU0sspWXuzypfng10HTF+dFS2NterhweWtgdRvf/f7aaoOUUxVZM8wMIXzazrZ7CxyeA==}
     engines: {node: '>=12.13.0'}
     peerDependencies:
@@ -1701,7 +1701,7 @@ packages:
     dependencies:
       fast-glob: 3.3.1
       postcss: 8.4.32
-      tailwindcss: 3.3.5
+      tailwindcss: 3.4.3
     dev: true
 
   /eslint-scope@7.2.2:
@@ -2327,8 +2327,8 @@ packages:
       has-symbols: 1.0.3
       reflect.getprototypeof: 1.0.4
 
-  /jiti@1.20.0:
-    resolution: {integrity: sha512-3TV69ZbrvV6U5DfQimop50jE9Dl6J8O1ja1dvBbMba/sZ3YBEQqJ2VZRoQPVnhlzjNtU1vaXRZVrVjU4qtm8yA==}
+  /jiti@1.21.0:
+    resolution: {integrity: sha512-gFqAIbuKyyso/3G2qhiO2OM6shY6EPP/R0+mkDbyspxKazh8BXDC5FiFsUjlczgdNz/vfra0da2y+aHrusLG/Q==}
     hasBin: true
 
   /joycon@3.1.1:
@@ -3332,8 +3332,8 @@ packages:
       wordwrapjs: 4.0.1
     dev: true
 
-  /tailwindcss@3.3.5:
-    resolution: {integrity: sha512-5SEZU4J7pxZgSkv7FP1zY8i2TIAOooNZ1e/OGtxIEv6GltpoiXUqWvLy89+a10qYTB1N5Ifkuw9lqQkN9sscvA==}
+  /tailwindcss@3.4.3:
+    resolution: {integrity: sha512-U7sxQk/n397Bmx4JHbJx/iSOOv5G+II3f1kpLpY2QeUv5DcPdcTsYLlusZfq1NthHS1c1cZoyFmmkex1rzke0A==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -3345,7 +3345,7 @@ packages:
       fast-glob: 3.3.1
       glob-parent: 6.0.2
       is-glob: 4.0.3
-      jiti: 1.20.0
+      jiti: 1.21.0
       lilconfig: 2.1.0
       micromatch: 4.0.5
       normalize-path: 3.0.0
